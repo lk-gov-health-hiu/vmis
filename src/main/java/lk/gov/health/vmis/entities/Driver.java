@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package lk.gov.health.vmis.entities;
 
 import java.io.Serializable;
@@ -5,32 +9,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 
 /**
  *
  * @author buddh
  */
 @Entity
-public class Institution implements Serializable {
+public class Driver implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    
-    
+    String NIC;
     String name;
-    @Lob
-    String address;
-    String type;
-    
-    @ManyToOne
-    Institution parent;
-    
-    
 
     public Long getId() {
         return id;
@@ -50,10 +42,10 @@ public class Institution implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Institution)) {
+        if (!(object instanceof Driver)) {
             return false;
         }
-        Institution other = (Institution) object;
+        Driver other = (Driver) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -62,7 +54,7 @@ public class Institution implements Serializable {
 
     @Override
     public String toString() {
-        return "lk.gov.health.vmis.entities.Institution[ id=" + id + " ]";
+        return "lk.gov.health.vmis.entities.Driver[ id=" + id + " ]";
     }
     
 }
