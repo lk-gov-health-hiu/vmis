@@ -22,10 +22,9 @@ public class Service implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    Date servicedate;
-    String servicedetails;
-    String servicetype;
-    
+    Date serviceDate;
+    String serviceDetails;
+    String serviceType;    
 
     public Long getId() {
         return id;

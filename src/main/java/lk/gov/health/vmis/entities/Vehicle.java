@@ -21,6 +21,12 @@ public class Vehicle implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    String make;
+    String model;
+    String chassyNum;
+    String engineNum;
+    String numberPlateNum;
+    
     
 
     public Long getId() {
