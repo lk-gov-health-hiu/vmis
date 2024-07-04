@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -27,6 +28,12 @@ public class Vehicle implements Serializable {
     String engineNum;
     String numberPlateNum;
     float Estimatecapacity;
+    String mainpurpose;
+    @ManyToOne
+    Driver driver;
+    float averagefuelperL;
+
+    
     
     
 

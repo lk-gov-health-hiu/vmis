@@ -10,26 +10,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
- * @author buddh
+ * @author renuk
  */
 @Entity
-public class Service implements Serializable {
+public class FuelOrder implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    Date serviceDate;
-    String serviceDetails;
-    String serviceType;
-    int odoMeterCount;
-    String status;
-    String otherDetailsl;
-    float amount;    
-
+    Date orderDate;
+    @ManyToOne
+    Institution intitite;
+    float ConformFuelamount;
+    float requestedFuelamount;
+    @ManyToOne
+    Vehicle vehicle;
+    
+    
+    
+    
     public Long getId() {
         return id;
     }
@@ -48,10 +52,10 @@ public class Service implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Service)) {
+        if (!(object instanceof FuelOrder)) {
             return false;
         }
-        Service other = (Service) object;
+        FuelOrder other = (FuelOrder) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -60,7 +64,7 @@ public class Service implements Serializable {
 
     @Override
     public String toString() {
-        return "lk.gov.health.vmis.entities.Service[ id=" + id + " ]";
+        return "lk.gov.health.vmis.entities.FuelOrder[ id=" + id + " ]";
     }
     
 }

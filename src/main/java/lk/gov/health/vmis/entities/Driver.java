@@ -23,6 +23,7 @@ public class Driver implements Serializable {
     private Long id;
     String NIC;
     String name;
+    String address;
 
     public Long getId() {
         return id;
