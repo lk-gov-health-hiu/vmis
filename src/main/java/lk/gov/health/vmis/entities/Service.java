@@ -30,7 +30,7 @@ public class Service implements Serializable {
     String serviceType;
     int odoMeterCount;
     String status;
-    String otherDetailsl;
+    String otherDetails;
     float amount; 
     @ManyToOne
     Vehicle vehicle;

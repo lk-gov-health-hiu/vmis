@@ -5,11 +5,13 @@
 package lk.gov.health.vmis.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -24,14 +26,21 @@ public class Vehicle implements Serializable {
     private Long id;
     String make;
     String model;
+    String numberPlateNum;
+
     String chassyNum;
     String engineNum;
-    String numberPlateNum;
-    float Estimatecapacity;
+    float EstimateFuelConsumtion;
     String mainpurpose;
     @ManyToOne
     Driver driver;
-    float averagefuelperL;
+    float averageFuelPerL;
+    @ManyToOne
+    Institution Ownerinstitution;  //Owener institution
+    @Temporal(javax.persistence.TemporalType.DATE)
+    Date registeredDate;// Registerd date
+    String registeredAt;// who is registered for Health Institution
+            
 
     
     

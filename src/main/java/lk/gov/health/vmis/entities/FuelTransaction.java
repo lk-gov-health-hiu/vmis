@@ -41,6 +41,7 @@ public class FuelTransaction implements Serializable {
     Driver driver;
     @Lob
     String comments;
+    
 
     
 
