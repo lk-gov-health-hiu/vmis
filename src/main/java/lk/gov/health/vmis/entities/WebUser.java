@@ -16,7 +16,7 @@ import javax.persistence.ManyToOne;
  * @author renuk
  */
 @Entity
-public class User implements Serializable {
+public class WebUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -49,10 +49,10 @@ public class User implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof User)) {
+        if (!(object instanceof WebUser)) {
             return false;
         }
-        User other = (User) object;
+        WebUser other = (WebUser) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

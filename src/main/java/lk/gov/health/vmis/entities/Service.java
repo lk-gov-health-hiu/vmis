@@ -10,6 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -22,13 +24,18 @@ public class Service implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Temporal(javax.persistence.TemporalType.DATE)
     Date serviceDate;
     String serviceDetails;
     String serviceType;
     int odoMeterCount;
     String status;
     String otherDetailsl;
-    float amount;    
+    float amount; 
+    @ManyToOne
+    Vehicle vehicle;
+    @ManyToOne
+    Driver driver;
 
     public Long getId() {
         return id;
