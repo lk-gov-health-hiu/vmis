@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author buddh
+ * @author buddhika,Renuka Theminda Kirulapana
  */
 @Entity
 public class Vehicle implements Serializable {
@@ -26,6 +26,7 @@ public class Vehicle implements Serializable {
     String chassyNum;
     String engineNum;
     String numberPlateNum;
+    float Estimatecapacity;
     
     
 
