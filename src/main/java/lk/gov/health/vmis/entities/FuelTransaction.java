@@ -10,27 +10,40 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  *
  * @author renuk
  */
 @Entity
-public class FuelOrder implements Serializable {
+public class FuelTransaction implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    Date orderDate;
     @ManyToOne
     Institution intitite;
     float ConformFuelamount;
     float requestedFuelamount;
     @ManyToOne
     Vehicle vehicle;
+    @ManyToOne
+    Institution fromInstitution;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date requestAt;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date requestedDate;
+    @ManyToOne
+    Driver driver;
+    @Lob
+    String comments;
+
     
+
     
     
     
@@ -52,10 +65,10 @@ public class FuelOrder implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof FuelOrder)) {
+        if (!(object instanceof FuelTransaction)) {
             return false;
         }
-        FuelOrder other = (FuelOrder) object;
+        FuelTransaction other = (FuelTransaction) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
