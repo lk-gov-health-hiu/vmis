@@ -16,7 +16,7 @@ import javax.persistence.Temporal;
 
 /**
  *
- * @author renuk
+ * @author renuka Theminda
  */
 @Entity
 public class FuelTransaction implements Serializable {
@@ -27,8 +27,9 @@ public class FuelTransaction implements Serializable {
     private Long id;
     @ManyToOne
     Institution intitite;
-    float ConformFuelamount;
-    float requestedFuelamount;
+   private Double requestQuantity;
+    private Double issuedQuantity;
+    private Double odoMeterReading;
     @ManyToOne
     Vehicle vehicle;
     @ManyToOne
@@ -41,6 +42,8 @@ public class FuelTransaction implements Serializable {
     Driver driver;
     @Lob
     String comments;
+     private String requestReferenceNumber;// bookrefernce number
+    private String issueReferenceNumber;//Bill number
     
 
     

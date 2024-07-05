@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -21,9 +22,12 @@ public class Driver implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    String NIC;
+    String nic;
     String name;
     String address;
+    @ManyToOne
+    private Institution institution;
+    
 
     public Long getId() {
         return id;
