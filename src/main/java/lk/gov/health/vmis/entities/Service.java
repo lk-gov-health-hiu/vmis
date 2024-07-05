@@ -25,17 +25,17 @@ public class Service implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date serviceDate;
-    String serviceDetails;
-    String serviceType;
-    int odoMeterCount;
-    String status;
-    String otherDetails;
-    float amount; 
+    private Date serviceDate;
+    private String serviceDetails;
+    private String serviceType;
+    private int odoMeterCount;
+    private String status;
+    private String otherDetails;
+    private float amount; 
     @ManyToOne
-    Vehicle vehicle;
+    private Vehicle vehicle;
     @ManyToOne
-    Driver driver;
+    private Driver driver;
 
     public Long getId() {
         return id;
@@ -68,6 +68,78 @@ public class Service implements Serializable {
     @Override
     public String toString() {
         return "lk.gov.health.vmis.entities.Service[ id=" + id + " ]";
+    }
+
+    public Date getServiceDate() {
+        return serviceDate;
+    }
+
+    public void setServiceDate(Date serviceDate) {
+        this.serviceDate = serviceDate;
+    }
+
+    public String getServiceDetails() {
+        return serviceDetails;
+    }
+
+    public void setServiceDetails(String serviceDetails) {
+        this.serviceDetails = serviceDetails;
+    }
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public int getOdoMeterCount() {
+        return odoMeterCount;
+    }
+
+    public void setOdoMeterCount(int odoMeterCount) {
+        this.odoMeterCount = odoMeterCount;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getOtherDetails() {
+        return otherDetails;
+    }
+
+    public void setOtherDetails(String otherDetails) {
+        this.otherDetails = otherDetails;
+    }
+
+    public float getAmount() {
+        return amount;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
     
 }

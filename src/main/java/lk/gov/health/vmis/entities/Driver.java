@@ -22,12 +22,11 @@ public class Driver implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    String nic;
-    String name;
-    String address;
+    private String nic;
+    private String name;
+    private String address;
     @ManyToOne
     private Institution institution;
-    
 
     public Long getId() {
         return id;
@@ -61,5 +60,37 @@ public class Driver implements Serializable {
     public String toString() {
         return "lk.gov.health.vmis.entities.Driver[ id=" + id + " ]";
     }
-    
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Institution getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
+    }
+
 }

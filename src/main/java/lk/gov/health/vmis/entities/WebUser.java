@@ -22,12 +22,12 @@ public class WebUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    String name;
+    private String name;
     @ManyToOne
-    Institution institution;
-    String username;
-    String password;
-    String type;
+    private Institution institution;
+    private String username;
+    private String password;
+    private String type;
     
     
 
@@ -62,6 +62,46 @@ public class WebUser implements Serializable {
     @Override
     public String toString() {
         return "lk.gov.health.vmis.entities.User[ id=" + id + " ]";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Institution getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
     
 }

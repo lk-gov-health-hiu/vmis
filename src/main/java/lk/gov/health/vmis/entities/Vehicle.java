@@ -39,7 +39,7 @@ public class Vehicle implements Serializable {
     Institution Ownerinstitution;  //Owener institution
     @Temporal(javax.persistence.TemporalType.DATE)
     Date registeredDate;// Registerd date
-    String registeredAt;// who is registered for Health Institution
+    String registeredAt;// who is registered  vehicle wchich for Health Institution
             
 
     

@@ -23,13 +23,13 @@ public class Institution implements Serializable {
     
     
     
-    String name;
+    private String name;
     @Lob
-    String address;
-    String type;
+    private String address;
+    private String type;
     
     @ManyToOne
-    Institution parent;
+    private Institution parent;
  
 
     
@@ -66,6 +66,38 @@ public class Institution implements Serializable {
     @Override
     public String toString() {
         return "lk.gov.health.vmis.entities.Institution[ id=" + id + " ]";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public Institution getParent() {
+        return parent;
+    }
+
+    public void setParent(Institution parent) {
+        this.parent = parent;
     }
     
 }

@@ -26,22 +26,22 @@ public class FuelTransaction implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @ManyToOne
-    Institution intitite;
+    private Institution intitite;
    private Double requestQuantity;
     private Double issuedQuantity;
     private Double odoMeterReading;
     @ManyToOne
-    Vehicle vehicle;
+    private Vehicle vehicle;
     @ManyToOne
-    Institution fromInstitution;
+    private Institution fromInstitution;
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date requestAt;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date requestedDate;
     @ManyToOne
-    Driver driver;
+    private Driver driver;
     @Lob
-    String comments;
+    private String comments;
      private String requestReferenceNumber;// bookrefernce number
     private String issueReferenceNumber;//Bill number
     
@@ -82,6 +82,102 @@ public class FuelTransaction implements Serializable {
     @Override
     public String toString() {
         return "lk.gov.health.vmis.entities.FuelOrder[ id=" + id + " ]";
+    }
+
+    public Institution getIntitite() {
+        return intitite;
+    }
+
+    public void setIntitite(Institution intitite) {
+        this.intitite = intitite;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Institution getFromInstitution() {
+        return fromInstitution;
+    }
+
+    public void setFromInstitution(Institution fromInstitution) {
+        this.fromInstitution = fromInstitution;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public String getComments() {
+        return comments;
+    }
+
+    public void setComments(String comments) {
+        this.comments = comments;
+    }
+
+    public Double getRequestQuantity() {
+        return requestQuantity;
+    }
+
+    public void setRequestQuantity(Double requestQuantity) {
+        this.requestQuantity = requestQuantity;
+    }
+
+    public Double getIssuedQuantity() {
+        return issuedQuantity;
+    }
+
+    public void setIssuedQuantity(Double issuedQuantity) {
+        this.issuedQuantity = issuedQuantity;
+    }
+
+    public Double getOdoMeterReading() {
+        return odoMeterReading;
+    }
+
+    public void setOdoMeterReading(Double odoMeterReading) {
+        this.odoMeterReading = odoMeterReading;
+    }
+
+    public Date getRequestAt() {
+        return requestAt;
+    }
+
+    public void setRequestAt(Date requestAt) {
+        this.requestAt = requestAt;
+    }
+
+    public Date getRequestedDate() {
+        return requestedDate;
+    }
+
+    public void setRequestedDate(Date requestedDate) {
+        this.requestedDate = requestedDate;
+    }
+
+    public String getRequestReferenceNumber() {
+        return requestReferenceNumber;
+    }
+
+    public void setRequestReferenceNumber(String requestReferenceNumber) {
+        this.requestReferenceNumber = requestReferenceNumber;
+    }
+
+    public String getIssueReferenceNumber() {
+        return issueReferenceNumber;
+    }
+
+    public void setIssueReferenceNumber(String issueReferenceNumber) {
+        this.issueReferenceNumber = issueReferenceNumber;
     }
     
 }
