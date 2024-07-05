@@ -21,8 +21,6 @@ public class Institution implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    
-    
     private String name;
     @Lob
     private String address;
@@ -31,10 +29,6 @@ public class Institution implements Serializable {
     @ManyToOne
     private Institution parent;
  
-
-    
-    
-
     public Long getId() {
         return id;
     }

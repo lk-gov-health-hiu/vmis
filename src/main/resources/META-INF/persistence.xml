@@ -4,8 +4,8 @@
   <persistence-unit name="my_persistence_unit">
     <class>lk.gov.health.vmis.entities.Institution</class>
     <class>lk.gov.health.vmis.entities.Driver</class>
-    <class>lk.gov.health.vmis.entities.Service</class>
     <class>lk.gov.health.vmis.entities.Vehicle</class>
+    <class>lk.gov.health.vmis.entities.VehicleService</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/vmis?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
