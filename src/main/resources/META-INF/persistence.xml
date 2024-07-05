@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <!-- Define Persistence Unit -->
-  <persistence-unit name="my_persistence_unit">
+  <persistence-unit name="vmis" transaction-type="JTA">
+    <jta-data-source>java:app/vmis</jta-data-source>
     <class>lk.gov.health.vmis.entities.Institution</class>
     <class>lk.gov.health.vmis.entities.Driver</class>
     <class>lk.gov.health.vmis.entities.Vehicle</class>
     <class>lk.gov.health.vmis.entities.VehicleService</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/vmis?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="Bud7NilBHiu123@#@852"/>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="lk.gov.health_vmis_war_1.0PU" transaction-type="JTA">
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
 </persistence>

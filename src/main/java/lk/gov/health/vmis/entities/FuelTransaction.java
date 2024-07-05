@@ -44,16 +44,11 @@ public class FuelTransaction implements Serializable {
     private String comments;
      private String requestReferenceNumber;// bookrefernce number
     private String issueReferenceNumber;//Bill number
-    
-
-    
-
-    
-    
-    
+   
     public Long getId() {
         return id;
     }
+ 
 
     public void setId(Long id) {
         this.id = id;
