@@ -24,28 +24,25 @@ public class Vehicle implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    String make;
-    String model;
-    String numberPlateNum;
+    private String make;
+    private String model;
+    private String numberPlateNum;
 
-    String chassyNum;
-    String engineNum;
-    float EstimateFuelConsumtion;
-    String mainpurpose;
+    private String chassyNum;
+    private String engineNum;
+    private float EstimateFuelConsumtion;
+    private String mainpurpose;
     @ManyToOne
-    Driver driver;
-    float averageFuelPerL;
+    private Driver driver;
+    private float averageFuelPerL;
     @ManyToOne
-    Institution Ownerinstitution;  //Owener institution
+    private Institution Ownerinstitution;  //Owener institution
     @Temporal(javax.persistence.TemporalType.DATE)
-    Date registeredDate;// Registerd date
-    String registeredAt;// who is registered  vehicle wchich for Health Institution
+    private Date registeredDate;// Registerd date
+    private String registeredAt;// who is registered  vehicle wchich for Health Institution
             
 
     
-    
-    
-
     public Long getId() {
         return id;
     }
@@ -77,6 +74,102 @@ public class Vehicle implements Serializable {
     @Override
     public String toString() {
         return "lk.gov.health.vmis.entities.Vehicle[ id=" + id + " ]";
+    }
+
+    public String getMake() {
+        return make;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getNumberPlateNum() {
+        return numberPlateNum;
+    }
+
+    public void setNumberPlateNum(String numberPlateNum) {
+        this.numberPlateNum = numberPlateNum;
+    }
+
+    public String getChassyNum() {
+        return chassyNum;
+    }
+
+    public void setChassyNum(String chassyNum) {
+        this.chassyNum = chassyNum;
+    }
+
+    public String getEngineNum() {
+        return engineNum;
+    }
+
+    public void setEngineNum(String engineNum) {
+        this.engineNum = engineNum;
+    }
+
+    public float getEstimateFuelConsumtion() {
+        return EstimateFuelConsumtion;
+    }
+
+    public void setEstimateFuelConsumtion(float EstimateFuelConsumtion) {
+        this.EstimateFuelConsumtion = EstimateFuelConsumtion;
+    }
+
+    public String getMainpurpose() {
+        return mainpurpose;
+    }
+
+    public void setMainpurpose(String mainpurpose) {
+        this.mainpurpose = mainpurpose;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public float getAverageFuelPerL() {
+        return averageFuelPerL;
+    }
+
+    public void setAverageFuelPerL(float averageFuelPerL) {
+        this.averageFuelPerL = averageFuelPerL;
+    }
+
+    public Institution getOwnerinstitution() {
+        return Ownerinstitution;
+    }
+
+    public void setOwnerinstitution(Institution Ownerinstitution) {
+        this.Ownerinstitution = Ownerinstitution;
+    }
+
+    public Date getRegisteredDate() {
+        return registeredDate;
+    }
+
+    public void setRegisteredDate(Date registeredDate) {
+        this.registeredDate = registeredDate;
+    }
+
+    public String getRegisteredAt() {
+        return registeredAt;
+    }
+
+    public void setRegisteredAt(String registeredAt) {
+        this.registeredAt = registeredAt;
     }
     
 }
