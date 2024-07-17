@@ -17,6 +17,8 @@
             <h:form>
                 <h:inputHidden id="validateCreateField" validator="#{driver.validateCreate}" value="value"/>
                 <h:panelGrid columns="2">
+                    <h:outputText value="Id:"/>
+                    <h:inputText id="Id" value="#{driver.driver.id}" title="Nic" />
                     <h:outputText value="Nic:"/>
                     <h:inputText id="nic" value="#{driver.driver.nic}" title="Nic" />
                     <h:outputText value="Name:"/>
