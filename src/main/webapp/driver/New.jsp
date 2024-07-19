@@ -28,9 +28,27 @@
                     <h:outputText value="Institution:"/>
                     <h:selectOneMenu id="institution" value="#{driver.driver.institution}" title="Institution" >
                         <f:selectItems value="#{institution.institutionItemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
+                    </h:selectOneMenu><!--
 
-                </h:panelGrid>
+                </h:panelGrid>-->
+<!--                <f:facet name="header" >
+                   <h:outputLabel value="Add Doctor Details" style="font-size: 30px; font-family: sans-serif; margin-left: 6em"></h:outputLabel>
+                  </f:facet>
+                    
+                    <h:panelGrid columns="1" style="margin-left: 12em">
+
+                      <p:outputLabel for="txtname" value="name"> </p:outputLabel>
+                      <p:inputText  id="txtname" required="true" value="" requiredMessage="Your must enter the name" style="color: gray"></p:inputText>
+                      <p:outputLabel for="txtage" value="Address"> </p:outputLabel>
+                      <p:inputText id ="txtage" required="true" value="" requiredMessage="Your must enter the age" style="color: blue"></p:inputText>
+                    
+                      <p:commandButton class="btn btn-success" value="Submit" action="" ajax="true" style="color: red; background-color:silver; font-size: 10px"></p:commandButton>
+
+                    </h:panelGrid>
+       
+                    <f:facet name="footer">
+                        <p:messages></p:messages>
+                    </f:facet>-->
                 <br />
                 <h:commandLink action="#{driver.create}" value="Create"/>
                 <br />

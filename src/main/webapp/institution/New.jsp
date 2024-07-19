@@ -14,7 +14,7 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h1>New Institution</h1>
-            <h:form>
+            <h:form class="">
                 <h:inputHidden id="validateCreateField" validator="#{institution.validateCreate}" value="value"/>
                 <h:panelGrid columns="2">
                     <h:outputText value="Name:"/>
