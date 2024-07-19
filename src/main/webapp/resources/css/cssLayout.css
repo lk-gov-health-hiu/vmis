@@ -57,5 +57,8 @@
   font-weight : bold;
   text-decoration : underline;
 }
+.navbar-blue {
+    background-color: blue !important;
+}
 
 
