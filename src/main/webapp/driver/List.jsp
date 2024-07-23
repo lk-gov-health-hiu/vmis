@@ -22,7 +22,7 @@
                     <h:commandLink action="#{driver.next}" value="Next #{driver.pagingInfo.batchSize}" rendered="#{driver.pagingInfo.lastItem + driver.pagingInfo.batchSize <= driver.pagingInfo.itemCount}"/>&nbsp;
                     <h:commandLink action="#{driver.next}" value="Remaining #{driver.pagingInfo.itemCount - driver.pagingInfo.lastItem}"
                                    rendered="#{driver.pagingInfo.lastItem < driver.pagingInfo.itemCount && driver.pagingInfo.lastItem + driver.pagingInfo.batchSize > driver.pagingInfo.itemCount}"/>
-                    <h:dataTable value="#{driver.driverItems}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:dataTable value="#{driver.driverItems}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px" >
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="Id"/>
@@ -74,6 +74,7 @@
                 </h:panelGroup>
                 <br />
                 <h:commandLink action="#{driver.createSetup}" value="New Driver"/>
+
                 <br />
                 <br />
                 <h:commandLink value="Index" action="welcome" immediate="true" />
