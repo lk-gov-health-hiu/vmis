@@ -84,6 +84,10 @@ public class DriverController {
         driver = new Driver();
         return "driver_create";
     }
+    public String createSetup1() {
+        // Perform any setup actions needed
+        return "create?faces-redirect=true"; // Redirects to create.xhtml
+    }
 
     public String create() {
         try {

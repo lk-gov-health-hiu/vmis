@@ -73,7 +73,7 @@
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{driver.createSetup}" value="New Driver"/>
+                <h:commandLink action="#{driver.createSetup1}" value="New Driver"/>
 
                 <br />
                 <br />
