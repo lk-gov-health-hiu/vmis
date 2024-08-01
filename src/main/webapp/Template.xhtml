@@ -8,18 +8,53 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Facelets Template</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></link>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Index</title>
     </h:head>
 
     <h:body>
 
         <div id="top" class="top">
-            <ui:insert name="top">hi llo</ui:insert>
+            <ui:insert name="top">
+                <h:form>
+                    <h:panelGroup layout="block" styleClass="navbar navbar-expand-lg navbar-dark " style="background-color: #b2d5d6;">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                                <h4 style="color: #045491; margin: 2;">Vehicle Management Information System</h4>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav" style="">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item" >
+                                        <h:commandLink value="Home" action="home.xhtml" styleClass="nav-link" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <h:commandLink value="Administration" action="Administration.xhtml" styleClass="nav-link" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <h:commandLink value="About" action="about.xhtml" styleClass="nav-link" />
+                                    </li>
+                                    <li class="nav-item">
+                                        <h:commandLink value="Contact" action="contact.xhtml" styleClass="nav-link" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </h:panelGroup>
+                </h:form>
+            </ui:insert>
         </div>
 
         <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
         </div>
+       
 
     </h:body>
 

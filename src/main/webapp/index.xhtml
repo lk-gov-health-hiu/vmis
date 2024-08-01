@@ -1,30 +1,64 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Vehicle management information system</title>
         <link rel="stylesheet" type="text/css" href="/vmis/faces/jsfcrud.css" />
     </h:head>
-    <h:body>
-        <h1> Ministry Of Health Sri Lanka</h1>
-       
-        <h:form>
-            <h:commandLink action="#{driver.listSetup}" value="Show All Driver Items"/>
-        </h:form>
-        <h:form>
-            <h:commandLink action="#{fuelTransaction.listSetup}" value="Show All FuelTransaction Items"/>
-        </h:form>
-        <h:form>
-            <h:commandLink action="#{institution.listSetup}" value="Show All Institution Items"/>
-        </h:form>
-        <h:form>
-            <h:commandLink action="#{vehicle.listSetup}" value="Show All Vehicle Items"/>
-        </h:form>
-    </h:body>
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
 
 
 
+            <ui:define name="content">
+                <div class="container-fluid" style="margin-left: 1pt">
+                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                         <h:commandButton action="#{institution.createSetup()}" value="Register Institution " styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{institution.listSetup()}" value="All Institutions " styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.createSetup()}" value="Register Vehicles" styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{driver.listSetup}" value=" All Vehicles" styleClass="btn btn" />
+                    </h:form>
+                    
+                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicleService.insertdayta}" value="Vehicle Rapair Inquires" styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{fuelTransaction.listSetup}" value="Register Drivers " styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="#{institution.listSetup}" value="All Drivers  " styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="Send Fuel Inquries" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="All Fuel Tranceactions" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="Fuel quters" styleClass="btn btn" />
+                    </h:form>
+                     <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="All Vehicle Rapairs" styleClass="btn btn" />
+                    </h:form>
+                   
+                </div>
 
+
+            </ui:define>               
+
+
+
+        </ui:composition>
+
+    </body>
 </html>
-
