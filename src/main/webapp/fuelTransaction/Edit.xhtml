@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FuelTransactionEditDlg" widgetVar="FuelTransactionEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditFuelTransactionTitle}">
+            <h:form id="FuelTransactionEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fuelTransactionController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{fuelTransactionController.selected.id}" title="#{bundle.EditFuelTransactionTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_intitite}" for="intitite" />
+                        <p:selectOneMenu id="intitite" value="#{fuelTransactionController.selected.intitite}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
+                                           var="intititeItem"
+                                           itemValue="#{intititeItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_vehicle}" for="vehicle" />
+                        <p:selectOneMenu id="vehicle" value="#{fuelTransactionController.selected.vehicle}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
+                                           var="vehicleItem"
+                                           itemValue="#{vehicleItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_fromInstitution}" for="fromInstitution" />
+                        <p:selectOneMenu id="fromInstitution" value="#{fuelTransactionController.selected.fromInstitution}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
+                                           var="fromInstitutionItem"
+                                           itemValue="#{fromInstitutionItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_driver}" for="driver" />
+                        <p:selectOneMenu id="driver" value="#{fuelTransactionController.selected.driver}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
+                                           var="driverItem"
+                                           itemValue="#{driverItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_comments}" for="comments" />
+                        <p:inputTextarea rows="4" cols="30" id="comments" value="#{fuelTransactionController.selected.comments}" title="#{bundle.EditFuelTransactionTitle_comments}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_requestQuantity}" for="requestQuantity" />
+                        <p:inputText id="requestQuantity" value="#{fuelTransactionController.selected.requestQuantity}" title="#{bundle.EditFuelTransactionTitle_requestQuantity}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_issuedQuantity}" for="issuedQuantity" />
+                        <p:inputText id="issuedQuantity" value="#{fuelTransactionController.selected.issuedQuantity}" title="#{bundle.EditFuelTransactionTitle_issuedQuantity}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_odoMeterReading}" for="odoMeterReading" />
+                        <p:inputText id="odoMeterReading" value="#{fuelTransactionController.selected.odoMeterReading}" title="#{bundle.EditFuelTransactionTitle_odoMeterReading}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_requestAt}" for="requestAt" />
+                        <p:calendar id="requestAt" pattern="MM/dd/yyyy HH:mm:ss" value="#{fuelTransactionController.selected.requestAt}" title="#{bundle.EditFuelTransactionTitle_requestAt}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_requestedDate}" for="requestedDate" />
+                        <p:calendar id="requestedDate" pattern="MM/dd/yyyy" value="#{fuelTransactionController.selected.requestedDate}" title="#{bundle.EditFuelTransactionTitle_requestedDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_requestReferenceNumber}" for="requestReferenceNumber" />
+                        <p:inputText id="requestReferenceNumber" value="#{fuelTransactionController.selected.requestReferenceNumber}" title="#{bundle.EditFuelTransactionTitle_requestReferenceNumber}" />
+                        <p:outputLabel value="#{bundle.EditFuelTransactionLabel_issueReferenceNumber}" for="issueReferenceNumber" />
+                        <p:inputText id="issueReferenceNumber" value="#{fuelTransactionController.selected.issueReferenceNumber}" title="#{bundle.EditFuelTransactionTitle_issueReferenceNumber}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{fuelTransactionController.update}" value="#{bundle.Save}" update="display,:FuelTransactionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FuelTransactionEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="FuelTransactionEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

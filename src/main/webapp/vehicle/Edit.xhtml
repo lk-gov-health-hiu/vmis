@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VehicleEditDlg" widgetVar="VehicleEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditVehicleTitle}">
+            <h:form id="VehicleEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vehicleController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_id}" for="id" />
+                        <p:inputText id="id" value="#{vehicleController.selected.id}" title="#{bundle.EditVehicleTitle_id}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_make}" for="make" />
+                        <p:inputText id="make" value="#{vehicleController.selected.make}" title="#{bundle.EditVehicleTitle_make}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_model}" for="model" />
+                        <p:inputText id="model" value="#{vehicleController.selected.model}" title="#{bundle.EditVehicleTitle_model}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_numberPlateNum}" for="numberPlateNum" />
+                        <p:inputText id="numberPlateNum" value="#{vehicleController.selected.numberPlateNum}" title="#{bundle.EditVehicleTitle_numberPlateNum}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_chassyNum}" for="chassyNum" />
+                        <p:inputText id="chassyNum" value="#{vehicleController.selected.chassyNum}" title="#{bundle.EditVehicleTitle_chassyNum}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_engineNum}" for="engineNum" />
+                        <p:inputText id="engineNum" value="#{vehicleController.selected.engineNum}" title="#{bundle.EditVehicleTitle_engineNum}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_estimateFuelConsumtion}" for="estimateFuelConsumtion" />
+                        <p:inputText id="estimateFuelConsumtion" value="#{vehicleController.selected.estimateFuelConsumtion}" title="#{bundle.EditVehicleTitle_estimateFuelConsumtion}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_mainpurpose}" for="mainpurpose" />
+                        <p:inputText id="mainpurpose" value="#{vehicleController.selected.mainpurpose}" title="#{bundle.EditVehicleTitle_mainpurpose}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_driver}" for="driver" />
+                        <p:selectOneMenu id="driver" value="#{vehicleController.selected.driver}" >
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
+                                           var="driverItem"
+                                           itemValue="#{driverItem}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_averageFuelPerL}" for="averageFuelPerL" />
+                        <p:inputText id="averageFuelPerL" value="#{vehicleController.selected.averageFuelPerL}" title="#{bundle.EditVehicleTitle_averageFuelPerL}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_ownerinstitution}" for="ownerinstitution" />
+                        <p:inputText id="ownerinstitution" value="#{vehicleController.selected.ownerinstitution}" title="#{bundle.EditVehicleTitle_ownerinstitution}" />
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_registeredDate}" for="registeredDate" />
+                        <p:calendar id="registeredDate" pattern="MM/dd/yyyy" value="#{vehicleController.selected.registeredDate}" title="#{bundle.EditVehicleTitle_registeredDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.EditVehicleLabel_registeredAt}" for="registeredAt" />
+                        <p:inputText id="registeredAt" value="#{vehicleController.selected.registeredAt}" title="#{bundle.EditVehicleTitle_registeredAt}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{vehicleController.update}" value="#{bundle.Save}" update="display,:VehicleListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VehicleEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="VehicleEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

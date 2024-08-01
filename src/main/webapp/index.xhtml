@@ -1,64 +1,34 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Vehicle management information system</title>
-        <link rel="stylesheet" type="text/css" href="/vmis/faces/jsfcrud.css" />
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
     </h:head>
-
-    <body>
-
-        <ui:composition template="./Template.xhtml">
-
-
-
-            <ui:define name="content">
-                <div class="container-fluid" style="margin-left: 1pt">
-                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                         <h:commandButton action="#{institution.createSetup()}" value="Register Institution " styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{institution.listSetup()}" value="All Institutions " styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.createSetup()}" value="Register Vehicles" styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{driver.listSetup}" value=" All Vehicles" styleClass="btn btn" />
-                    </h:form>
-                    
-                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicleService.insertdayta}" value="Vehicle Rapair Inquires" styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{fuelTransaction.listSetup}" value="Register Drivers " styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="#{institution.listSetup}" value="All Drivers  " styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="Send Fuel Inquries" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="All Fuel Tranceactions" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="Fuel quters" styleClass="btn btn" />
-                    </h:form>
-                     <h:form style="background-color: blanchedalmond; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="All Vehicle Rapairs" styleClass="btn btn" />
-                    </h:form>
-                   
-                </div>
-
-
-            </ui:define>               
+    <h:body>
+        Hello from Facelets
+        <br />
+      
+        <h:link outcome="/driver/List" value="Show All Driver Items"/>
+        <br />
+        <h:link outcome="/fuelTransaction/List" value="Show All FuelTransaction Items"/>
+        <br />
+        <h:link outcome="/institution/List" value="Show All Institution Items"/>
+               <br />
+        <h:link outcome="/vehicle/List" value="Show All Vehicle Items"/>
+        <br />
+        <h:link outcome="/vehicleService/List" value="Show All VehicleService Items"/>
+        <br />
+        <h:link outcome="/webUser/List" value="Show All WebUser Items"/>
+    </h:body>
 
 
 
-        </ui:composition>
 
-    </body>
+
+
+
+
 </html>
+

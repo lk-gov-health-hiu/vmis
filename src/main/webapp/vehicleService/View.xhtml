@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VehicleServiceViewDlg" widgetVar="VehicleServiceViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehicleServiceTitle}">
+            <h:form id="VehicleServiceViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vehicleServiceController.selected != null}">
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_id}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.id}" title="#{bundle.ViewVehicleServiceTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDate}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceDate}" title="#{bundle.ViewVehicleServiceTitle_serviceDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDetails}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceDetails}" title="#{bundle.ViewVehicleServiceTitle_serviceDetails}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceType}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceType}" title="#{bundle.ViewVehicleServiceTitle_serviceType}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_odoMeterCount}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.odoMeterCount}" title="#{bundle.ViewVehicleServiceTitle_odoMeterCount}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_status}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.status}" title="#{bundle.ViewVehicleServiceTitle_status}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_otherDetails}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.otherDetails}" title="#{bundle.ViewVehicleServiceTitle_otherDetails}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_amount}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.amount}" title="#{bundle.ViewVehicleServiceTitle_amount}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_vehicle}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.vehicle}" title="#{bundle.ViewVehicleServiceTitle_vehicle}"/>
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_driver}"/>
+                        <h:outputText value="#{vehicleServiceController.selected.driver}" title="#{bundle.ViewVehicleServiceTitle_driver}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="VehicleServiceViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

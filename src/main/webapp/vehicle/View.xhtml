@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="VehicleViewDlg" widgetVar="VehicleViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehicleTitle}">
+            <h:form id="VehicleViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{vehicleController.selected != null}">
+                        <h:outputText value="#{bundle.ViewVehicleLabel_id}"/>
+                        <h:outputText value="#{vehicleController.selected.id}" title="#{bundle.ViewVehicleTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_make}"/>
+                        <h:outputText value="#{vehicleController.selected.make}" title="#{bundle.ViewVehicleTitle_make}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_model}"/>
+                        <h:outputText value="#{vehicleController.selected.model}" title="#{bundle.ViewVehicleTitle_model}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_numberPlateNum}"/>
+                        <h:outputText value="#{vehicleController.selected.numberPlateNum}" title="#{bundle.ViewVehicleTitle_numberPlateNum}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_chassyNum}"/>
+                        <h:outputText value="#{vehicleController.selected.chassyNum}" title="#{bundle.ViewVehicleTitle_chassyNum}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_engineNum}"/>
+                        <h:outputText value="#{vehicleController.selected.engineNum}" title="#{bundle.ViewVehicleTitle_engineNum}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_estimateFuelConsumtion}"/>
+                        <h:outputText value="#{vehicleController.selected.estimateFuelConsumtion}" title="#{bundle.ViewVehicleTitle_estimateFuelConsumtion}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_mainpurpose}"/>
+                        <h:outputText value="#{vehicleController.selected.mainpurpose}" title="#{bundle.ViewVehicleTitle_mainpurpose}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_driver}"/>
+                        <h:outputText value="#{vehicleController.selected.driver}" title="#{bundle.ViewVehicleTitle_driver}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_averageFuelPerL}"/>
+                        <h:outputText value="#{vehicleController.selected.averageFuelPerL}" title="#{bundle.ViewVehicleTitle_averageFuelPerL}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_ownerinstitution}"/>
+                        <h:outputText value="#{vehicleController.selected.ownerinstitution}" title="#{bundle.ViewVehicleTitle_ownerinstitution}"/>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_registeredDate}"/>
+                        <h:outputText value="#{vehicleController.selected.registeredDate}" title="#{bundle.ViewVehicleTitle_registeredDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewVehicleLabel_registeredAt}"/>
+                        <h:outputText value="#{vehicleController.selected.registeredAt}" title="#{bundle.ViewVehicleTitle_registeredAt}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="VehicleViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

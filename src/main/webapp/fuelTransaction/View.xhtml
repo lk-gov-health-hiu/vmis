@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="FuelTransactionViewDlg" widgetVar="FuelTransactionViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewFuelTransactionTitle}">
+            <h:form id="FuelTransactionViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{fuelTransactionController.selected != null}">
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_id}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.id}" title="#{bundle.ViewFuelTransactionTitle_id}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_intitite}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.intitite}" title="#{bundle.ViewFuelTransactionTitle_intitite}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_vehicle}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.vehicle}" title="#{bundle.ViewFuelTransactionTitle_vehicle}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_fromInstitution}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.fromInstitution}" title="#{bundle.ViewFuelTransactionTitle_fromInstitution}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_driver}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.driver}" title="#{bundle.ViewFuelTransactionTitle_driver}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_comments}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.comments}" title="#{bundle.ViewFuelTransactionTitle_comments}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_requestQuantity}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.requestQuantity}" title="#{bundle.ViewFuelTransactionTitle_requestQuantity}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_issuedQuantity}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.issuedQuantity}" title="#{bundle.ViewFuelTransactionTitle_issuedQuantity}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_odoMeterReading}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.odoMeterReading}" title="#{bundle.ViewFuelTransactionTitle_odoMeterReading}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_requestAt}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.requestAt}" title="#{bundle.ViewFuelTransactionTitle_requestAt}">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_requestedDate}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.requestedDate}" title="#{bundle.ViewFuelTransactionTitle_requestedDate}">
+                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                        </h:outputText>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_requestReferenceNumber}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.requestReferenceNumber}" title="#{bundle.ViewFuelTransactionTitle_requestReferenceNumber}"/>
+                        <h:outputText value="#{bundle.ViewFuelTransactionLabel_issueReferenceNumber}"/>
+                        <h:outputText value="#{fuelTransactionController.selected.issueReferenceNumber}" title="#{bundle.ViewFuelTransactionTitle_issueReferenceNumber}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="FuelTransactionViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
