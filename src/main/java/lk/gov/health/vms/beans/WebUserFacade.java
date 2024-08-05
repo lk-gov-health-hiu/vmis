@@ -16,7 +16,7 @@ import lk.gov.health.vms.entities.WebUser;
 @Stateless
 public class WebUserFacade extends AbstractFacade<WebUser> {
 
-    @PersistenceContext(unitName = "my_persistence_unit")
+    @PersistenceContext(unitName = "em")
     private EntityManager em;
 
     @Override

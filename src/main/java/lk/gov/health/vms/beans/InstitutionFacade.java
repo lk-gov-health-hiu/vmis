@@ -16,7 +16,7 @@ import lk.gov.health.vms.entities.Institution;
 @Stateless
 public class InstitutionFacade extends AbstractFacade<Institution> {
 
-    @PersistenceContext(unitName = "my_persistence_unit")
+    @PersistenceContext(unitName = "em")
     private EntityManager em;
 
     @Override

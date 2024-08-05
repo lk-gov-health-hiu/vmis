@@ -16,7 +16,7 @@ import lk.gov.health.vms.entities.Driver;
 @Stateless
 public class DriverFacade extends AbstractFacade<Driver> {
 
-    @PersistenceContext(unitName = "my_persistence_unit")
+    @PersistenceContext(unitName = "em")
     private EntityManager em;
 
     @Override

@@ -1,22 +1,56 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <head>
+        <title>Index</title>
+    </head>
 
     <body>
 
-        <ui:composition template="./template.xhtml">
+        <ui:composition template="./Template.xhtml">
 
-            <ui:define name="top">
-                top
-            </ui:define>
-
+           
             <ui:define name="content">
-                content
-            </ui:define>
+                <div class="container-fluid" style="margin-left: 1pt">
+                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="/driver/List" value="Register Institution "  styleClass="btn btn"  />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{driver.create()}" value="All Institutions " styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.create}" value="Register Vehicles" styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{driver.listSetup}" value=" All Vehicles" styleClass="btn btn" />
+                    </h:form>
 
-            <ui:define name="bottom">
-                bottom
+                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicleService.insertdayta}" value="Vehicle Rapair Inquires" styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{fuelTransaction.listSetup}" value="Register Drivers " styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="#{institution.listSetup}" value="All Drivers  " styleClass="btn btn" />
+                    </h:form >
+                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="Send Fuel Inquries" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="All Fuel Tranceactions" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="Fuel quters" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.listSetup}" value="All Vehicle Rapairs" styleClass="btn btn" />
+                    </h:form>
+                </div>   
+
             </ui:define>
 
         </ui:composition>

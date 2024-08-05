@@ -16,7 +16,7 @@ import lk.gov.health.vms.entities.Vehicle;
 @Stateless
 public class VehicleFacade extends AbstractFacade<Vehicle> {
 
-    @PersistenceContext(unitName = "my_persistence_unit")
+    @PersistenceContext(unitName = "em")
     private EntityManager em;
 
     @Override

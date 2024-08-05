@@ -16,7 +16,7 @@ import lk.gov.health.vms.entities.FuelTransaction;
 @Stateless
 public class FuelTransactionFacade extends AbstractFacade<FuelTransaction> {
 
-    @PersistenceContext(unitName = "my_persistence_unit")
+    @PersistenceContext(unitName = "em")
     private EntityManager em;
 
     @Override
