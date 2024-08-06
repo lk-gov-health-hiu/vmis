@@ -14,6 +14,7 @@
         </ui:define>
 
         <ui:define name="body">
+          <ui:define name="content">
             <h:form id="InstitutionListForm">
                 <p:panel header="#{bundle.ListInstitutionTitle}">
                     <p:dataTable id="datalist" value="#{institutionController.items}" var="item"
@@ -70,6 +71,7 @@
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>
             <ui:include src="View.xhtml"/>
+          </ui:define>
         </ui:define>
     </ui:composition>
 
