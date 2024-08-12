@@ -13,7 +13,7 @@
            <ui:define name="content">
                 <div class="container-fluid" style="margin-left: 1pt">
                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="/driver/List" value="Register Institution "  styleClass="btn btn"  />
+                        <h:commandButton action="/driver/List"  value="Register Institution "  styleClass="btn btn"  />
                     </h:form >
                     <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
                         <h:commandButton action="#{driver.create()}" value="All Institutions " styleClass="btn btn" />
@@ -24,6 +24,9 @@
                     <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
                         <h:commandButton action="#{driver.listSetup}" value=" All Vehicles" styleClass="btn btn" />
                     </h:form>
+                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                        <h:commandButton action="#{vehicle.create}" value="Register Vehicles" styleClass="btn btn" />
+                    </h:form >
 
                     <h:form style="background-color: blanchedalmond ; margin-right: 780pt">
                         <h:commandButton action="#{vehicleService.insertdayta}" value="Vehicle Rapair Inquires" styleClass="btn btn" />
@@ -46,7 +49,7 @@
                     <h:form style="background-color: blanchedalmond; margin-right: 780pt">
                         <h:commandButton action="#{vehicle.listSetup}" value="All Vehicle Rapairs" styleClass="btn btn" />
                     </h:form>
-<!--                    <h:form style="background-color: #ece3a5 ; margin-right: 780pt">
+                    <h:form style="background-color: #ece3a5 ; margin-right: 780pt">
                         <h:link outcome="/fuelTransaction/List" value="Show All FuelTransaction Items"/>
                     </h:form>
                     <h:form style="background-color: blanchedalmond; margin-right: 780pt">
@@ -59,7 +62,7 @@
                          <h:link outcome="/webUser/List" value="Show All WebUser Items"/>
                     
                     </h:form>
-                    <h:link outcome="/driver/List" value="Show All Driver Items"/>-->
+                    <h:link outcome="/driver/List" value="Show All Driver Items"/>
        
                 </div>   
 
