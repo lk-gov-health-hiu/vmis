@@ -9,14 +9,13 @@
         <ui:composition template="./template.xhtml">
 
             
-
            <ui:define name="body">
                 <div class="container-fluid" style="margin-left: 1pt">
                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="/driver/List?faces-redirect=true" value="Register Institution "  styleClass="btn btn"  />
+                        <h:commandButton action="/institution/Create?faces-redirect=true" value="Register Institution "  styleClass="btn btn"  />
                     </h:form >
                     <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{driver.create()}" value="All Institutions " styleClass="btn btn" />
+                        <h:commandButton action="/institution/List?faces-redirect=true" value="All Institutions " styleClass="btn btn" />
                     </h:form>
                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
                         <h:commandButton action="#{vehicle.create}" value="Register Vehicles" styleClass="btn btn" />
@@ -32,13 +31,13 @@
                         <h:commandButton action="#{fuelTransaction.listSetup}" value="Register Drivers " styleClass="btn btn" />
                     </h:form>
                     <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="#{institution.listSetup}" value="All Drivers  " styleClass="btn btn" />
+                        <h:commandButton action="/driver/List?faces-redirect=true" value="All Drivers  " styleClass="btn btn" />
                     </h:form >
                     <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
                         <h:commandButton action="#{vehicle.listSetup}" value="Send Fuel Inquries" styleClass="btn btn" />
                     </h:form>
                     <h:form style="background-color: blanchedalmond; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="All Fuel Tranceactions" styleClass="btn btn" />
+                        <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="All Fuel Tranceactions" styleClass="btn btn" />
                     </h:form>
                     <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
                         <h:commandButton action="#{vehicle.listSetup}" value="Fuel quters" styleClass="btn btn" />
