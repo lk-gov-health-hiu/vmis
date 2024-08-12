@@ -62,7 +62,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{institutionController.prepareCreate}" update=":InstitutionCreateForm" oncomplete="PF('InstitutionCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":InstitutionViewForm" oncomplete="PF('InstitutionViewDialog').show()" disabled="#{empty institutionController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":InstitutionEditForm" oncomplete="PF('InstitutionEditDialog').show()" disabled="#{empty institutionController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{institutionController.destroy}" update=":growl,datalist" disabled="#{empty institutionController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{institutionController.destroy}" update="datalist" disabled="#{empty institutionController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

@@ -61,7 +61,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{driverController.prepareCreate}" update=":DriverCreateForm" oncomplete="PF('DriverCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":DriverViewForm" oncomplete="PF('DriverViewDialog').show()" disabled="#{empty driverController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":DriverEditForm" oncomplete="PF('DriverEditDialog').show()" disabled="#{empty driverController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{driverController.destroy}" update=":growl,datalist" disabled="#{empty driverController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{driverController.destroy}" update="datalist" disabled="#{empty driverController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

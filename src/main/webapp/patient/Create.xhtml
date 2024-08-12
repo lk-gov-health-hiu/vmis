@@ -17,7 +17,7 @@
                         <p:outputLabel value="#{bundle.CreatePatientLabel_name}" for="name" />
                         <p:inputText id="name" value="#{patientController.selected.name}" title="#{bundle.CreatePatientTitle_name}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{patientController.create}" value="#{bundle.Save}" update="display,:PatientListForm:datalist,:growl" oncomplete="handleSubmit(args,'PatientCreateDialog');"/>
+                    <p:commandButton actionListener="#{patientController.create}" value="#{bundle.Save}" update="display,:PatientListForm:datalist," oncomplete="handleSubmit(args,'PatientCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="PatientCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

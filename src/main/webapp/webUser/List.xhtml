@@ -67,7 +67,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{webUserController.prepareCreate}" update=":WebUserCreateForm" oncomplete="PF('WebUserCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":WebUserViewForm" oncomplete="PF('WebUserViewDialog').show()" disabled="#{empty webUserController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":WebUserEditForm" oncomplete="PF('WebUserEditDialog').show()" disabled="#{empty webUserController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{webUserController.destroy}" update=":growl,datalist" disabled="#{empty webUserController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{webUserController.destroy}" update="datalist" disabled="#{empty webUserController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

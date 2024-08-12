@@ -93,7 +93,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{vehicleServiceController.prepareCreate}" update=":VehicleServiceCreateForm" oncomplete="PF('VehicleServiceCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":VehicleServiceViewForm" oncomplete="PF('VehicleServiceViewDialog').show()" disabled="#{empty vehicleServiceController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":VehicleServiceEditForm" oncomplete="PF('VehicleServiceEditDialog').show()" disabled="#{empty vehicleServiceController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{vehicleServiceController.destroy}" update=":growl,datalist" disabled="#{empty vehicleServiceController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{vehicleServiceController.destroy}" update="datalist" disabled="#{empty vehicleServiceController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

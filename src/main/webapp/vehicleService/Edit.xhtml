@@ -43,7 +43,7 @@
                                            itemValue="#{driverItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{vehicleServiceController.update}" value="#{bundle.Save}" update="display,:VehicleServiceListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VehicleServiceEditDialog');"/>
+                    <p:commandButton actionListener="#{vehicleServiceController.update}" value="#{bundle.Save}" update="display,:VehicleServiceListForm:datalist," oncomplete="handleSubmit(args, 'VehicleServiceEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VehicleServiceEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

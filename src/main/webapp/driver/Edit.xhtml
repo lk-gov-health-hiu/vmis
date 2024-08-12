@@ -28,7 +28,7 @@
                                            itemValue="#{institutionItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{driverController.update}" value="#{bundle.Save}" update="display,:DriverListForm:datalist,:growl" oncomplete="handleSubmit(args, 'DriverEditDialog');"/>
+                    <p:commandButton actionListener="#{driverController.update}" value="#{bundle.Save}" update="display,:DriverListForm:datalist," oncomplete="handleSubmit(args, 'DriverEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="DriverEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

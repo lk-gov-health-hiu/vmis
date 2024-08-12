@@ -20,41 +20,41 @@
             <ui:insert name="top">
                 <ui:insert name="top">
                     <h:form>
-                                                <h:panelGroup layout="block" styleClass="navbar navbar-expand-lg navbar-dark " style="background-color: #b2d5d6;">
-                                                    <div class="container-fluid">
-                                                        <a class="navbar-brand" href="#">
-                                                            <h4 style="color: #045491; margin: 2;">Vehicle Management Information System</h4>
-                                                        </a>
-                                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                                                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                                            <span class="navbar-toggler-icon"></span>
-                                                        </button>
-                                                        <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 500px">
-                                                            <ul class="navbar-nav ml-auto">
-                                                                <li class="nav-item" >
-                                                                    <h:commandLink value="Home" action="home.xhtml" styleClass="nav-link"  style="color:blueviolet" />
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <h:commandLink value="Administration" action="Administration.xhtml" styleClass="nav-link" style="color:indigo"/>
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <h:commandLink value="About" action="about.xhtml" styleClass="nav-link" style="color:indigo" />
-                                                                </li>
-                                                                <li class="nav-item">
-                                                                    <h:commandLink value="Contact" action="contact.xhtml" styleClass="nav-link" style="color:indigo" />
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </h:panelGroup>
-                       
+                        <h:panelGroup layout="block" styleClass="navbar navbar-expand-lg navbar-dark " style="background-color: #b2d5d6;">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">
+                                    <h4 style="color: #045491; margin: 2;">Vehicle Management Information System</h4>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 500px">
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item" >
+                                            <h:commandLink value="Home" action="/index?faces-redirect=true" styleClass="nav-link"  style="color:blueviolet" />
+                                        </li>
+                                        <li class="nav-item">
+                                            <h:commandLink value="Administration" action="Administration.xhtml" styleClass="nav-link" style="color:indigo"/>
+                                        </li>
+                                        <li class="nav-item">
+                                            <h:commandLink value="About" action="about.xhtml" styleClass="nav-link" style="color:indigo" />
+                                        </li>
+                                        <li class="nav-item">
+                                            <h:commandLink value="Contact" action="contact.xhtml" styleClass="nav-link" style="color:indigo" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </h:panelGroup>
+
                     </h:form>
                 </ui:insert>
             </ui:insert>
         </div>
 
         <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
+            <ui:insert name="body">Content</ui:insert>
         </div>
         <footer class="footer">
             <ui:insert name="footer">

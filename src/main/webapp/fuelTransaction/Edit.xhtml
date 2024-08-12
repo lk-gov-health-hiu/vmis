@@ -59,7 +59,7 @@
                         <p:outputLabel value="#{bundle.EditFuelTransactionLabel_issueReferenceNumber}" for="issueReferenceNumber" />
                         <p:inputText id="issueReferenceNumber" value="#{fuelTransactionController.selected.issueReferenceNumber}" title="#{bundle.EditFuelTransactionTitle_issueReferenceNumber}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{fuelTransactionController.update}" value="#{bundle.Save}" update="display,:FuelTransactionListForm:datalist,:growl" oncomplete="handleSubmit(args, 'FuelTransactionEditDialog');"/>
+                    <p:commandButton actionListener="#{fuelTransactionController.update}" value="#{bundle.Save}" update="display,:FuelTransactionListForm:datalist," oncomplete="handleSubmit(args, 'FuelTransactionEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="FuelTransactionEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

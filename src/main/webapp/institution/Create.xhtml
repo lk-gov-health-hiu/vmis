@@ -27,7 +27,7 @@
                                            itemValue="#{parentItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{institutionController.create}" value="#{bundle.Save}" update="display,:InstitutionListForm:datalist,:growl" oncomplete="handleSubmit(args,'InstitutionCreateDialog');"/>
+                    <p:commandButton actionListener="#{institutionController.create}" value="#{bundle.Save}" update="display,:InstitutionListForm:datalist," oncomplete="handleSubmit(args,'InstitutionCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="InstitutionCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

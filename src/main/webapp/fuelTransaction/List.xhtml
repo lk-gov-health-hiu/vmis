@@ -113,7 +113,7 @@
                             <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{fuelTransactionController.prepareCreate}" update=":FuelTransactionCreateForm" oncomplete="PF('FuelTransactionCreateDialog').show()"/>
                             <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":FuelTransactionViewForm" oncomplete="PF('FuelTransactionViewDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
                             <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":FuelTransactionEditForm" oncomplete="PF('FuelTransactionEditDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{fuelTransactionController.destroy}" update=":growl,datalist" disabled="#{empty fuelTransactionController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{fuelTransactionController.destroy}" update="datalist" disabled="#{empty fuelTransactionController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

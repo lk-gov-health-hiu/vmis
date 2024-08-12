@@ -44,7 +44,7 @@
                         <p:outputLabel value="#{bundle.EditVehicleLabel_registeredAt}" for="registeredAt" />
                         <p:inputText id="registeredAt" value="#{vehicleController.selected.registeredAt}" title="#{bundle.EditVehicleTitle_registeredAt}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{vehicleController.update}" value="#{bundle.Save}" update="display,:VehicleListForm:datalist,:growl" oncomplete="handleSubmit(args, 'VehicleEditDialog');"/>
+                    <p:commandButton actionListener="#{vehicleController.update}" value="#{bundle.Save}" update="display,:VehicleListForm:datalist," oncomplete="handleSubmit(args, 'VehicleEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="VehicleEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

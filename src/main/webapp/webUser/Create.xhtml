@@ -29,7 +29,7 @@
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_type}" for="type" />
                         <p:inputText id="type" value="#{webUserController.selected.type}" title="#{bundle.CreateWebUserTitle_type}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{webUserController.create}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist,:growl" oncomplete="handleSubmit(args,'WebUserCreateDialog');"/>
+                    <p:commandButton actionListener="#{webUserController.create}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist," oncomplete="handleSubmit(args,'WebUserCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="WebUserCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

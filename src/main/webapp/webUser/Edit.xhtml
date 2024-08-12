@@ -30,7 +30,7 @@
                         <p:outputLabel value="#{bundle.EditWebUserLabel_type}" for="type" />
                         <p:inputText id="type" value="#{webUserController.selected.type}" title="#{bundle.EditWebUserTitle_type}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{webUserController.update}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist,:growl" oncomplete="handleSubmit(args, 'WebUserEditDialog');"/>
+                    <p:commandButton actionListener="#{webUserController.update}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist," oncomplete="handleSubmit(args, 'WebUserEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="WebUserEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
