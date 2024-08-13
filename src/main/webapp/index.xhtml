@@ -12,25 +12,30 @@
            <ui:define name="body">
                 <div class="container-fluid" style="margin-left: 1pt; margin-top: 30px ;border: 20pt">
                     
-                    <h:form style="background-color: pink  ; margin-right: 780pt ;height: 60px">
-                        <h:commandButton action="/institution/List?faces-redirect=true" value="All Institutions " styleClass="btn btn" />
+                    <h:form style="background-color: pink  ; margin-right: 780pt ;height: 60px" >
+                        <i class="pi pi-home" style="font-size: 2rem"></i>
+                        <h:commandButton action="/institution/List?faces-redirect=true"  value="Manage Institutions " styleClass="btn btn" />
                     </h:form>
                     
                     <h:form style="background-color: blanchedalmond ; margin-right: 780pt;height: 60px">
-                        <h:commandButton action="/vehicle/List?faces-redirect=true" value=" All Vehicles" styleClass="btn btn" />
+                        <i class="pi pi-car" style="font-size: 2rem"></i>
+                        <h:commandButton action="/vehicle/List?faces-redirect=true" value=" Manage Vehicles" styleClass="btn btn" />
                     </h:form>
 
                     
                     <h:form style="background-color:  pink ; margin-right: 780pt;height: 60px">
-                        <h:commandButton action="/driver/List?faces-redirect=true" value="All Drivers  " styleClass="btn btn" />
+                        <i class="pi pi-users" style="font-size: 2rem"></i>
+                        <h:commandButton action="/driver/List?faces-redirect=true" value="Manage Drivers  " styleClass="btn btn" />
                     </h:form >
                     
                     <h:form style="background-color: blanchedalmond; margin-right: 780pt;height: 60px">
-                        <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="All Fuel Tranceactions" styleClass="btn btn" />
+                         <i class="pi pi-prime" style="font-size: 2rem"></i>
+                        <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="Manage Fuel Tranceactions" styleClass="btn btn" />
                     </h:form>
                    
                     <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
-                        <h:commandButton action="/vehicleService/List?faces-redirect=true" value="All Vehicle Rapairs" styleClass="btn btn" />
+                        <i class="pi pi-server" style="font-size: 2rem"></i>
+                        <h:commandButton action="/vehicleService/List?faces-redirect=true" value="Manage Vehicle Rapairs" styleClass="btn btn" />
                     </h:form>
 
        
