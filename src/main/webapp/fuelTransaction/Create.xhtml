@@ -8,55 +8,55 @@
 
     <ui:composition>
 
-        <p:dialog id="FuelTransactionCreateDlg" widgetVar="FuelTransactionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateFuelTransactionTitle}">
-            <h:form id="FuelTransactionCreateForm">
+        <p:dialog id="FuelTransactionCreateDlg" widgetVar="FuelTransactionCreateDialog" modal="true" resizable="false" appendTo="@(body)" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" >
+            <h5 style="color: indianred; margin-left: 60px;">Petrol Transaction Details Register</h5>
+            <h:form id="FuelTransactionCreateForm" style="width: 780px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{fuelTransactionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{fuelTransactionController.selected.id}" title="#{bundle.CreateFuelTransactionTitle_id}" />
+                      
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_intitite}" for="intitite" />
-                        <p:selectOneMenu id="intitite" value="#{fuelTransactionController.selected.intitite}" >
+                        <p:selectOneMenu id="intitite" class="form-control" value="#{fuelTransactionController.selected.intitite}" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="intititeItem"
                                            itemValue="#{intititeItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_vehicle}" for="vehicle" />
-                        <p:selectOneMenu id="vehicle" value="#{fuelTransactionController.selected.vehicle}" >
+                        <p:selectOneMenu id="vehicle" class="form-control" value="#{fuelTransactionController.selected.vehicle}" >
                             <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
                                            var="vehicleItem"
                                            itemValue="#{vehicleItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_fromInstitution}" for="fromInstitution" />
-                        <p:selectOneMenu id="fromInstitution" value="#{fuelTransactionController.selected.fromInstitution}" >
+                        <p:selectOneMenu id="fromInstitution" class="form-control" value="#{fuelTransactionController.selected.fromInstitution}" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="fromInstitutionItem"
                                            itemValue="#{fromInstitutionItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_driver}" for="driver" />
-                        <p:selectOneMenu id="driver" value="#{fuelTransactionController.selected.driver}" >
+                        <p:selectOneMenu id="driver" class="form-control" value="#{fuelTransactionController.selected.driver}" >
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
                                            itemValue="#{driverItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_comments}" for="comments" />
-                        <p:inputTextarea rows="4" cols="30" id="comments" value="#{fuelTransactionController.selected.comments}" title="#{bundle.CreateFuelTransactionTitle_comments}" />
+                        <p:inputTextarea rows="4" class="form-control" cols="30" id="comments" value="#{fuelTransactionController.selected.comments}" title="#{bundle.CreateFuelTransactionTitle_comments}" />
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestQuantity}" for="requestQuantity" />
-                        <p:inputText id="requestQuantity" value="#{fuelTransactionController.selected.requestQuantity}" title="#{bundle.CreateFuelTransactionTitle_requestQuantity}" />
+                        <p:inputText id="requestQuantity" class="form-control" value="#{fuelTransactionController.selected.requestQuantity}" title="#{bundle.CreateFuelTransactionTitle_requestQuantity}" />
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_issuedQuantity}" for="issuedQuantity" />
-                        <p:inputText id="issuedQuantity" value="#{fuelTransactionController.selected.issuedQuantity}" title="#{bundle.CreateFuelTransactionTitle_issuedQuantity}" />
+                        <p:inputText id="issuedQuantity" class="form-control" value="#{fuelTransactionController.selected.issuedQuantity}" title="#{bundle.CreateFuelTransactionTitle_issuedQuantity}" />
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_odoMeterReading}" for="odoMeterReading" />
-                        <p:inputText id="odoMeterReading" value="#{fuelTransactionController.selected.odoMeterReading}" title="#{bundle.CreateFuelTransactionTitle_odoMeterReading}" />
+                        <p:inputText id="odoMeterReading" class="form-control" value="#{fuelTransactionController.selected.odoMeterReading}" title="#{bundle.CreateFuelTransactionTitle_odoMeterReading}" />
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestAt}" for="requestAt" />
-                        <p:calendar id="requestAt" pattern="MM/dd/yyyy HH:mm:ss" value="#{fuelTransactionController.selected.requestAt}" title="#{bundle.EditFuelTransactionTitle_requestAt}"  showOn="button"/>
+                        <p:calendar id="requestAt" class="form-control" pattern="MM/dd/yyyy HH:mm:ss" value="#{fuelTransactionController.selected.requestAt}" title="#{bundle.EditFuelTransactionTitle_requestAt}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestedDate}" for="requestedDate" />
-                        <p:calendar id="requestedDate" pattern="MM/dd/yyyy" value="#{fuelTransactionController.selected.requestedDate}" title="#{bundle.EditFuelTransactionTitle_requestedDate}"  showOn="button"/>
+                        <p:calendar id="requestedDate" class="form-control" pattern="MM/dd/yyyy" value="#{fuelTransactionController.selected.requestedDate}" title="#{bundle.EditFuelTransactionTitle_requestedDate}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestReferenceNumber}" for="requestReferenceNumber" />
-                        <p:inputText id="requestReferenceNumber" value="#{fuelTransactionController.selected.requestReferenceNumber}" title="#{bundle.CreateFuelTransactionTitle_requestReferenceNumber}" />
+                        <p:inputText id="requestReferenceNumber" class="form-control" value="#{fuelTransactionController.selected.requestReferenceNumber}" title="#{bundle.CreateFuelTransactionTitle_requestReferenceNumber}" />
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_issueReferenceNumber}" for="issueReferenceNumber" />
-                        <p:inputText id="issueReferenceNumber" value="#{fuelTransactionController.selected.issueReferenceNumber}" title="#{bundle.CreateFuelTransactionTitle_issueReferenceNumber}" />
+                        <p:inputText id="issueReferenceNumber" class="form-control" value="#{fuelTransactionController.selected.issueReferenceNumber}" title="#{bundle.CreateFuelTransactionTitle_issueReferenceNumber}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{fuelTransactionController.create}" value="#{bundle.Save}" update="display,:FuelTransactionListForm:datalist," oncomplete="handleSubmit(args,'FuelTransactionCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="FuelTransactionCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{fuelTransactionController.create}" icon="pi pi-save" style="background-color: indigo; margin-right: 10px;" value="#{bundle.Save}" update="display,:FuelTransactionListForm:datalist," oncomplete="handleSubmit(args,'FuelTransactionCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" icon="pi pi-times" style="background-color: blueviolet;" onclick="FuelTransactionCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

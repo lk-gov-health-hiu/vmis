@@ -8,41 +8,42 @@
 
     <ui:composition>
 
-        <p:dialog id="VehicleServiceCreateDlg" widgetVar="VehicleServiceCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateVehicleServiceTitle}">
-            <h:form id="VehicleServiceCreateForm">
+        <p:dialog id="VehicleServiceCreateDlg" widgetVar="VehicleServiceCreateDialog" modal="true" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" resizable="false" appendTo="@(body)">
+            <h5 style="color: indianred; margin-left: 60px;">Vehicle Service and Service Details Register</h5>
+            <h:form id="VehicleServiceCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{vehicleServiceController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{vehicleServiceController.selected.id}" title="#{bundle.CreateVehicleServiceTitle_id}" />
+                        <p:inputText id="id" value="#{vehicleServiceController.selected.id}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_id}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDate}" for="serviceDate" />
-                        <p:calendar id="serviceDate" pattern="MM/dd/yyyy" value="#{vehicleServiceController.selected.serviceDate}" title="#{bundle.EditVehicleServiceTitle_serviceDate}"  showOn="button"/>
+                        <p:calendar id="serviceDate" pattern="MM/dd/yyyy" value="#{vehicleServiceController.selected.serviceDate}" class="form-control" title="#{bundle.EditVehicleServiceTitle_serviceDate}"  showOn="button"/>
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDetails}" for="serviceDetails" />
-                        <p:inputText id="serviceDetails" value="#{vehicleServiceController.selected.serviceDetails}" title="#{bundle.CreateVehicleServiceTitle_serviceDetails}" />
+                        <p:inputText id="serviceDetails" value="#{vehicleServiceController.selected.serviceDetails}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_serviceDetails}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceType}" for="serviceType" />
-                        <p:inputText id="serviceType" value="#{vehicleServiceController.selected.serviceType}" title="#{bundle.CreateVehicleServiceTitle_serviceType}" />
+                        <p:inputText id="serviceType" value="#{vehicleServiceController.selected.serviceType}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_serviceType}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_odoMeterCount}" for="odoMeterCount" />
-                        <p:inputText id="odoMeterCount" value="#{vehicleServiceController.selected.odoMeterCount}" title="#{bundle.CreateVehicleServiceTitle_odoMeterCount}" />
+                        <p:inputText id="odoMeterCount" value="#{vehicleServiceController.selected.odoMeterCount}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_odoMeterCount}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_status}" for="status" />
-                        <p:inputText id="status" value="#{vehicleServiceController.selected.status}" title="#{bundle.CreateVehicleServiceTitle_status}" />
+                        <p:inputText id="status" value="#{vehicleServiceController.selected.status}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_status}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_otherDetails}" for="otherDetails" />
-                        <p:inputText id="otherDetails" value="#{vehicleServiceController.selected.otherDetails}" title="#{bundle.CreateVehicleServiceTitle_otherDetails}" />
+                        <p:inputText id="otherDetails" value="#{vehicleServiceController.selected.otherDetails}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_otherDetails}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_amount}" for="amount" />
-                        <p:inputText id="amount" value="#{vehicleServiceController.selected.amount}" title="#{bundle.CreateVehicleServiceTitle_amount}" />
+                        <p:inputText id="amount" value="#{vehicleServiceController.selected.amount}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_amount}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_vehicle}" for="vehicle" />
-                        <p:selectOneMenu id="vehicle" value="#{vehicleServiceController.selected.vehicle}" >
+                        <p:selectOneMenu id="vehicle" class="form-control" value="#{vehicleServiceController.selected.vehicle}" >
                             <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
                                            var="vehicleItem"
                                            itemValue="#{vehicleItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_driver}" for="driver" />
-                        <p:selectOneMenu id="driver" value="#{vehicleServiceController.selected.driver}" >
+                        <p:selectOneMenu id="driver" class="form-control" value="#{vehicleServiceController.selected.driver}" >
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
                                            itemValue="#{driverItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{vehicleServiceController.create}" value="#{bundle.Save}" update="display,:VehicleServiceListForm:datalist," oncomplete="handleSubmit(args,'VehicleServiceCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="VehicleServiceCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{vehicleServiceController.create}"  icon="pi pi-save" style="background-color: indigo; margin-right: 10px;" value="#{bundle.Save}" update="display,:VehicleServiceListForm:datalist," oncomplete="handleSubmit(args,'VehicleServiceCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}"  icon="pi pi-times" style="background-color: blueviolet;" onclick="VehicleServiceCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
