@@ -8,18 +8,18 @@
 
     <ui:composition>
 
-        <p:dialog id="VehicleCreateDlg" widgetVar="VehicleCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateVehicleTitle}">
-            <h:form id="VehicleCreateForm">
+        <p:dialog id="VehicleCreateDlg" widgetVar="VehicleCreateDialog" modal="true" resizable="false" appendTo="@(body)" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" header="Vehicle Register">
+            <h:form id="VehicleCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
+                    
                     <p:panelGrid columns="2" rendered="#{vehicleController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateVehicleLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{vehicleController.selected.id}" title="#{bundle.CreateVehicleTitle_id}" />
+                        <p:outputLabel value="#{bundle.CreateVehicleLabel_numberPlateNum}" for="numberPlateNum" />
+                        <p:inputText id="numberPlateNum" value="#{vehicleController.selected.numberPlateNum}" title="#{bundle.CreateVehicleTitle_numberPlateNum}" />
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_make}" for="make" />
                         <p:inputText id="make" value="#{vehicleController.selected.make}" title="#{bundle.CreateVehicleTitle_make}" />
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_model}" for="model" />
                         <p:inputText id="model" value="#{vehicleController.selected.model}" title="#{bundle.CreateVehicleTitle_model}" />
-                        <p:outputLabel value="#{bundle.CreateVehicleLabel_numberPlateNum}" for="numberPlateNum" />
-                        <p:inputText id="numberPlateNum" value="#{vehicleController.selected.numberPlateNum}" title="#{bundle.CreateVehicleTitle_numberPlateNum}" />
+                        
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_chassyNum}" for="chassyNum" />
                         <p:inputText id="chassyNum" value="#{vehicleController.selected.chassyNum}" title="#{bundle.CreateVehicleTitle_chassyNum}" />
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_engineNum}" for="engineNum" />
@@ -43,8 +43,8 @@
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_registeredAt}" for="registeredAt" />
                         <p:inputText id="registeredAt" value="#{vehicleController.selected.registeredAt}" title="#{bundle.CreateVehicleTitle_registeredAt}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{vehicleController.create}" value="#{bundle.Save}" update="display,:VehicleListForm:datalist," oncomplete="handleSubmit(args,'VehicleCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="VehicleCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{vehicleController.create}" icon="pi pi-save" style="background-color: indigo;" value="#{bundle.Save}" update="display,:VehicleListForm:datalist," oncomplete="handleSubmit(args,'VehicleCreateDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" icon="pi pi-times" style="background-color: blueviolet; color: white; border-radius: 5px;" onclick="VehicleCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>

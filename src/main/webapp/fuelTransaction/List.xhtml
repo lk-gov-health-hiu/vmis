@@ -10,12 +10,13 @@
 
 
         <ui:define name="title">
-            <h:outputText value="#{bundle.ListFuelTransactionTitle}"></h:outputText>
+            <h:outputText value=""></h:outputText>
         </ui:define>
 
         <ui:define name="body">
             <h:form id="FuelTransactionListForm">
-                <p:panel header="#{bundle.ListFuelTransactionTitle}">
+                <p:panel >
+                   <h5 style="color: indigo ; font-family: fantasy">Fuel Transaction List</h5>
                     <p:dataTable id="datalist" value="#{fuelTransactionController.items}" var="item"
                                  selectionMode="single" selection="#{fuelTransactionController.selected}"
                                  paginator="true"
@@ -110,10 +111,10 @@
                             <h:outputText value="#{item.issueReferenceNumber}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{fuelTransactionController.prepareCreate}" update=":FuelTransactionCreateForm" oncomplete="PF('FuelTransactionCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":FuelTransactionViewForm" oncomplete="PF('FuelTransactionViewDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":FuelTransactionEditForm" oncomplete="PF('FuelTransactionEditDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{fuelTransactionController.destroy}" update="datalist" disabled="#{empty fuelTransactionController.selected}"/>
+                            <p:commandButton id="createButton" style="background-color: blueviolet ; margin-right: 10px;" icon="pi pi-save"   value="New Fuel Transaction Details Register" actionListener="#{fuelTransactionController.prepareCreate}" update=":FuelTransactionCreateForm" oncomplete="PF('FuelTransactionCreateDialog').show()"/>
+                            <p:commandButton id="viewButton" style="background-color: goldenrod; margin-right: 10px;"  icon="pi pi-eye" value="#{bundle.View}" update=":FuelTransactionViewForm" oncomplete="PF('FuelTransactionViewDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
+                            <p:commandButton id="editButton" style="background-color: green ;margin-right: 10px;"  icon="pi pi-check-circle" value="#{bundle.Edit}" update=":FuelTransactionEditForm" oncomplete="PF('FuelTransactionEditDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
+                            <p:commandButton id="deleteButton" style="background-color: #D20005" icon="pi pi-trash"  value="#{bundle.Delete}" actionListener="#{fuelTransactionController.destroy}" update="datalist" disabled="#{empty fuelTransactionController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

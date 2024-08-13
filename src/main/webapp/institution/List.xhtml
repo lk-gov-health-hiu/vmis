@@ -16,7 +16,9 @@
        
           <ui:define name="body">
             <h:form id="InstitutionListForm">
-                <p:panel header="#{bundle.ListInstitutionTitle}">
+                <p:panel >
+                         <h5 style="color: indigo ;font-family:Fantasy">Institution list</h5>
+                    
                     <p:dataTable id="datalist" value="#{institutionController.items}" var="item"
                                  selectionMode="single" selection="#{institutionController.selected}"
                                  paginator="true"
@@ -59,10 +61,10 @@
                             <h:outputText value="#{item.parent}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{institutionController.prepareCreate}" update=":InstitutionCreateForm"  oncomplete="PF('InstitutionCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":InstitutionViewForm" oncomplete="PF('InstitutionViewDialog').show()" disabled="#{empty institutionController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":InstitutionEditForm" oncomplete="PF('InstitutionEditDialog').show()" disabled="#{empty institutionController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{institutionController.destroy}" update="datalist" disabled="#{empty institutionController.selected}"/>
+                            <p:commandButton id="createButton" style="background-color: blueviolet ; margin-right: 10px;" icon="pi pi-save"   value=" New Institution Register" actionListener="#{institutionController.prepareCreate}" update=":InstitutionCreateForm"  oncomplete="PF('InstitutionCreateDialog').show()"/>
+                            <p:commandButton id="viewButton" style="background-color: goldenrod; margin-right: 10px;"  icon="pi pi-eye" value="#{bundle.View}" update=":InstitutionViewForm" oncomplete="PF('InstitutionViewDialog').show()" disabled="#{empty institutionController.selected}"/>
+                            <p:commandButton id="editButton" style="background-color: green ;margin-right: 10px;"   icon="pi pi-check-circle" value="#{bundle.Edit}" update=":InstitutionEditForm" oncomplete="PF('InstitutionEditDialog').show()" disabled="#{empty institutionController.selected}"/>
+                            <p:commandButton id="deleteButton" style="background-color: #D20005" icon="pi pi-trash"  value="#{bundle.Delete}" actionListener="#{institutionController.destroy}" update="datalist" disabled="#{empty institutionController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

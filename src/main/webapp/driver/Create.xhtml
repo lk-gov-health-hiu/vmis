@@ -5,35 +5,47 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
-    
+
 
     <ui:composition>
 
-        <p:dialog id="DriverCreateDlg" widgetVar="DriverCreateDialog" modal="true" resizable="false" appendTo="@(body)" >
-            <h3 style="color: indianred ;margin-left: 60px">Driver Register</h3>
-            <h:form id="DriverCreateForm" class="form-control" style="width: 700px ;border: 4" >
-                <h:panelGroup id="display" >
-                    <p:panelGrid columns="2" rendered="#{driverController.selected != null}">
-                       
+        <p:dialog id="DriverCreateDlg" widgetVar="DriverCreateDialog" modal="true" resizable="false" appendTo="@(body)"
+                  style="background-color: plum; padding: 20px; border-radius: 20px;">
+            <h3 style="color: indianred; margin-left: 60px;">Driver Register</h3>
+            <h:form id="DriverCreateForm" style="width: 700px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{driverController.selected != null}" style="width: 100%; border-spacing: 10px;">
                         <p:outputLabel value="#{bundle.CreateDriverLabel_nic}" class="form-label" for="nic" />
-                        <p:inputText id="nic" value="#{driverController.selected.nic}" class="form-control" title="#{bundle.CreateDriverTitle_nic}" />
+                        <p:inputText id="nic" value="#{driverController.selected.nic}" class="form-control" title="#{bundle.CreateDriverTitle_nic}" 
+                                     style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;" />
+
                         <p:outputLabel value="#{bundle.CreateDriverLabel_name}" for="name" />
-                        <p:inputText id="name" value="#{driverController.selected.name}" class="form-control" title="#{bundle.CreateDriverTitle_name}" />
+                        <p:inputText id="name" value="#{driverController.selected.name}" class="form-control" title="#{bundle.CreateDriverTitle_name}" 
+                                     style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;" />
+
                         <p:outputLabel value="#{bundle.CreateDriverLabel_address}" for="address" />
-                        <p:inputText id="address" value="#{driverController.selected.address}" class="form-control" title="#{bundle.CreateDriverTitle_address}" />
+                        <p:inputText id="address" value="#{driverController.selected.address}" class="form-control" title="#{bundle.CreateDriverTitle_address}" 
+                                     style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;" />
+
                         <p:outputLabel value="#{bundle.CreateDriverLabel_institution}" for="institution" />
-                        <p:selectOneMenu id="institution" class="form-control"  value="#{driverController.selected.institution}"   >
+                        <p:selectOneMenu id="institution" class="form-control" value="#{driverController.selected.institution}" 
+                                         style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;">
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="institutionItem"
-                                           
                                            itemValue="#{institutionItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{driverController.create}" value="#{bundle.Save}" update="display,:DriverListForm:datalist," oncomplete="handleSubmit(args,'DriverCreateDialog');" icon="pi pi-save" style="background-color: indigo ; margin-right: 10px;" />
-                    <p:commandButton value="#{bundle.Cancel}" onclick="DriverCreateDialog.hide()" icon="pi pi-times" style="background-color:blueviolet"/>
+
+                    <p:commandButton actionListener="#{driverController.create}" value="#{bundle.Save}" update="display,:DriverListForm:datalist," 
+                                     oncomplete="handleSubmit(args,'DriverCreateDialog');" icon="pi pi-save" 
+                                     style="background-color: indigo; color: white; margin-right: 10px; border-radius: 5px;" />
+
+                    <p:commandButton value="#{bundle.Cancel}" onclick="DriverCreateDialog.hide()" icon="pi pi-times" 
+                                     style="background-color: blueviolet; color: white; border-radius: 5px;" />
                 </h:panelGroup>
             </h:form>
         </p:dialog>
+
 
     </ui:composition>
 </html>

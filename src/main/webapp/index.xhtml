@@ -10,61 +10,35 @@
 
             
            <ui:define name="body">
-                <div class="container-fluid" style="margin-left: 1pt">
-                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="/institution/Create?faces-redirect=true" value="Register Institution "  styleClass="btn btn"  />
-                    </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
+                <div class="container-fluid" style="margin-left: 1pt; margin-top: 30px ;border: 20pt">
+                    
+                    <h:form style="background-color: pink  ; margin-right: 780pt ;height: 60px">
                         <h:commandButton action="/institution/List?faces-redirect=true" value="All Institutions " styleClass="btn btn" />
                     </h:form>
-                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.create}" value="Register Vehicles" styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{driver.listSetup}" value=" All Vehicles" styleClass="btn btn" />
+                    
+                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt;height: 60px">
+                        <h:commandButton action="/vehicle/List?faces-redirect=true" value=" All Vehicles" styleClass="btn btn" />
                     </h:form>
 
-                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicleService.insertdayta}" value="Vehicle Rapair Inquires" styleClass="btn btn" />
-                    </h:form >
-                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{fuelTransaction.listSetup}" value="Register Drivers " styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond  ; margin-right: 780pt">
+                    
+                    <h:form style="background-color:  pink ; margin-right: 780pt;height: 60px">
                         <h:commandButton action="/driver/List?faces-redirect=true" value="All Drivers  " styleClass="btn btn" />
                     </h:form >
-                    <h:form style="background-color: #ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="Send Fuel Inquries" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                    
+                    <h:form style="background-color: blanchedalmond; margin-right: 780pt;height: 60px">
                         <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="All Fuel Tranceactions" styleClass="btn btn" />
                     </h:form>
-                    <h:form style="background-color:#ece3a5  ; margin-right: 780pt">
-                        <h:commandButton action="#{vehicle.listSetup}" value="Fuel quters" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
+                   
+                    <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
                         <h:commandButton action="/vehicleService/List?faces-redirect=true" value="All Vehicle Rapairs" styleClass="btn btn" />
                     </h:form>
-<!--                    <h:form style="background-color: #ece3a5 ; margin-right: 780pt">
-                        <h:link outcome="/fuelTransaction/List" value="Show All FuelTransaction Items"/>
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
-                       <h:link outcome="/institution/List" value="Show All Institution Items"/>
-                    </h:form>
-                    <h:form style="background-color:#ece3a5 ; margin-right: 780pt">
-                         <h:link outcome="/vehicle/List" value="Show All Vehicle Items"/>
-                    </h:form>
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt">
-                         <h:link outcome="/webUser/List" value="Show All WebUser Items"/>
-                    
-                    </h:form>
-                    <h:link outcome="/driver/List" value="Show All Driver Items"/>-->
+
        
                 </div>   
 
             </ui:define>
             <ui:define name="footer" >
-                <footer class="footer text-center" style="margin-top: 170px ;background-color: #b2d5d6; color: indigo " >
+                <footer class="footer text-center" style="margin-top: 250px ;background-color: #b2d5d6; color: indigo " >
                     <p> &copy; Health Information Unit, Ministry of Health Sri Lanka <strong>2024</strong></p>
                 </footer>
             </ui:define>

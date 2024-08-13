@@ -15,7 +15,8 @@
 
         <ui:define name="body">
             <h:form id="VehicleListForm">
-                <p:panel header="#{bundle.ListVehicleTitle}">
+                <p:panel >
+                    <h5 style="color: indigo ;font-family:Fantasy">Vehicle List</h5>
                     <p:dataTable id="datalist" value="#{vehicleController.items}" var="item"
                                  selectionMode="single" selection="#{vehicleController.selected}"
                                  paginator="true"
@@ -108,10 +109,10 @@
                             <h:outputText value="#{item.registeredAt}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{vehicleController.prepareCreate}" update=":VehicleCreateForm" oncomplete="PF('VehicleCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()" disabled="#{empty vehicleController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":VehicleEditForm" oncomplete="PF('VehicleEditDialog').show()" disabled="#{empty vehicleController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{vehicleController.destroy}" update="datalist" disabled="#{empty vehicleController.selected}"/>
+                            <p:commandButton id="createButton" icon="pi pi-save"   value=" New Vehicle Register" actionListener="#{vehicleController.prepareCreate}" style="background-color: blueviolet ; margin-right: 10px;" update=":VehicleCreateForm" oncomplete="PF('VehicleCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()" disabled="#{empty vehicleController.selected}"/>
+                            <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":VehicleEditForm" oncomplete="PF('VehicleEditDialog').show()" disabled="#{empty vehicleController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="pi pi-trash"  value="#{bundle.Delete}" style="background-color: #D20005" actionListener="#{vehicleController.destroy}" update="datalist" disabled="#{empty vehicleController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>

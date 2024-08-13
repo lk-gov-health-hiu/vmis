@@ -8,27 +8,28 @@
 
     <ui:composition>
 
-        <p:dialog id="InstitutionCreateDlg" widgetVar="InstitutionCreateDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.CreateInstitutionTitle}">
-            <h:form id="InstitutionCreateForm">
+        <p:dialog id="InstitutionCreateDlg" widgetVar="InstitutionCreateDialog" modal="true" resizable="false"  appendTo="@(body)" 
+                   style="background-color: plum; padding: 20px; border-radius: 20px; height: 800px">
+             <h3 style="color: indianred; margin-left: 60px;">Institution Register</h3>
+            <h:form id="InstitutionCreateForm"  style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{institutionController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateInstitutionLabel_id}" for="id" />
-                        <p:inputText id="id" value="#{institutionController.selected.id}" title="#{bundle.CreateInstitutionTitle_id}" />
+                    <p:panelGrid columns="2" rendered="#{institutionController.selected != null}" style="width: 100%; border-spacing: 10px;">
+                       
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_name}" for="name" />
-                        <p:inputText id="name" value="#{institutionController.selected.name}" title="#{bundle.CreateInstitutionTitle_name}" />
+                        <p:inputText id="name" value="#{institutionController.selected.name}" title="#{bundle.CreateInstitutionTitle_name}" class="form-control" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_address}" for="address" />
-                        <p:inputTextarea rows="4" cols="30" id="address" value="#{institutionController.selected.address}" title="#{bundle.CreateInstitutionTitle_address}" />
+                        <p:inputTextarea rows="4" cols="30" id="address" value="#{institutionController.selected.address}" class="form-control"  title="#{bundle.CreateInstitutionTitle_address}" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_type}" for="type" />
-                        <p:inputText id="type" value="#{institutionController.selected.type}" title="#{bundle.CreateInstitutionTitle_type}" />
+                        <p:inputText id="type" value="#{institutionController.selected.type}" class="form-control"  title="#{bundle.CreateInstitutionTitle_type}" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_parent}" for="parent" />
-                        <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" >
+                        <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" class="form-control"  style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="parentItem"
                                            itemValue="#{parentItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{institutionController.create}" value="#{bundle.Save}" update="display,:InstitutionListForm:datalist," oncomplete="handleSubmit(args,'InstitutionCreateDialog');"/>
-                    <p:commandButton value="#{bundle.Cancel}" onclick="InstitutionCreateDialog.hide()"/>
+                    <p:commandButton actionListener="#{institutionController.create}"  icon="pi pi-save"  value="#{bundle.Save}" update="display,:InstitutionListForm:datalist," style="background-color: indigo; color: white; margin-right: 10px; border-radius: 5px;"  oncomplete="handleSubmit(args,'InstitutionCreateDialog'); "/>
+                    <p:commandButton value="#{bundle.Cancel}" icon="pi pi-times" style="background-color: blueviolet; color: white; border-radius: 5px;" onclick="InstitutionCreateDialog.hide()"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
