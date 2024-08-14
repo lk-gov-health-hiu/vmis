@@ -29,7 +29,7 @@
                                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
-                                <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 500px">
+                                <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: 447px">
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item" >
                                             <h:commandLink value="Home" action="/index?faces-redirect=true" styleClass="nav-link"  style="color:blueviolet" />
@@ -43,6 +43,17 @@
                                         <li class="nav-item">
                                             <h:commandLink value="Contact" action="contact.xhtml" styleClass="nav-link" style="color:indigo" />
                                         </li>
+                                        
+                                        <li>
+                                            <p:commandButton 
+                                                value="Log Out" 
+                                                action="login?faces-redirect=true" 
+                                                icon="pi pi-sign-out" 
+                                                styleClass="btn" 
+                                                style="background-color: #D20005; color: #E9CCA4; padding: 5px 10px; font-size: 12px; border-radius:10px" 
+                                                />
+                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
