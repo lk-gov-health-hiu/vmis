@@ -15,7 +15,8 @@
 
         <ui:define name="body">
             <h:form id="WebUserListForm">
-                <p:panel header="#{bundle.ListWebUserTitle}">
+                <p:panel>
+                     <h5 style="color: indigo ;font-family:Fantasy">Vehicle Service And Repair list</h5>
                     <p:dataTable id="datalist" value="#{webUserController.items}" var="item"
                                  selectionMode="single" selection="#{webUserController.selected}"
                                  paginator="true"
@@ -64,10 +65,10 @@
                             <h:outputText value="#{item.type}"/>
                         </p:column>
                         <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="#{bundle.Create}" actionListener="#{webUserController.prepareCreate}" update=":WebUserCreateForm" oncomplete="PF('WebUserCreateDialog').show()"/>
-                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="#{bundle.View}" update=":WebUserViewForm" oncomplete="PF('WebUserViewDialog').show()" disabled="#{empty webUserController.selected}"/>
-                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="#{bundle.Edit}" update=":WebUserEditForm" oncomplete="PF('WebUserEditDialog').show()" disabled="#{empty webUserController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="#{bundle.Delete}" actionListener="#{webUserController.destroy}" update="datalist" disabled="#{empty webUserController.selected}"/>
+                            <p:commandButton id="createButton" icon="pi pi-save"   value="New User Register" style="background-color: blueviolet ; margin-right: 10px;" actionListener="#{webUserController.prepareCreate}" update=":WebUserCreateForm" oncomplete="PF('WebUserCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":WebUserViewForm" oncomplete="PF('WebUserViewDialog').show()" disabled="#{empty webUserController.selected}"/>
+                            <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":WebUserEditForm" oncomplete="PF('WebUserEditDialog').show()" disabled="#{empty webUserController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="pi pi-trash" style="background-color: #D20005" value="#{bundle.Delete}" actionListener="#{webUserController.destroy}" update="datalist" disabled="#{empty webUserController.selected}"/>
                         </f:facet>
                     </p:dataTable>
                 </p:panel>
