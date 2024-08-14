@@ -14,13 +14,13 @@
         <ui:composition template="./template.xhtml">
 
             <ui:define name="top">
-                <!-- Top content if any -->
+                
             </ui:define>
 
             <ui:define name="body">
                 <div class="container-fluid">
                     
-                    <h4 style="margin-left: 455px; color: #045491;font-family: serif; margin-top: 50px">Vehicle Management Information System</h4>
+                    <h4 style="margin-left: 475px; color: #045491;font-family: serif; margin-top: 50px">Vehicle Management Information System</h4>
                 </div>
                 <div class="container" style="max-width: 400px; margin-top: 150px;">
                     <div class="card shadow-lg border-0 rounded-lg">
@@ -39,7 +39,7 @@
                                     <h:inputSecret id="password" value="#{loginBean.password}" styleClass="form-control" style="border: 1px solid #B0C4DE;"/>
                                 </div>
                                 <div class="text-center">
-                                    <p:commandButton value="Login" icon="pi pi-arrow-right" action="#{loginBean.login}" styleClass="btn btn-success btn-block" style="font-weight: bold; "/>
+                                    <p:commandButton value="Login" icon="pi pi-arrow-right" action="/index?faces-redirect=true" styleClass="btn btn-success btn-block" style="font-weight: bold; "/>
                                 </div>
                             </h:form>
                         </div>
@@ -50,9 +50,9 @@
                 </div>
             </ui:define>
 
-<!--            <ui:define name="footer">
-                 Footer content if any 
-            </ui:define>-->
+            <ui:define name="footer">
+              
+            </ui:define>
 
         </ui:composition>
 
