@@ -8,37 +8,51 @@
 
     <ui:composition>
 
-        <p:dialog id="VehicleServiceViewDlg" widgetVar="VehicleServiceViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehicleServiceTitle}">
+        <p:dialog id="VehicleServiceViewDlg" widgetVar="VehicleServiceViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewVehicleServiceTitle}" 
+                  style="max-width: 600px; border-radius: 8px;">
             <h:form id="VehicleServiceViewForm">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{vehicleServiceController.selected != null}">
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_id}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.id}" title="#{bundle.ViewVehicleServiceTitle_id}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDate}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.serviceDate}" title="#{bundle.ViewVehicleServiceTitle_serviceDate}">
+                    <p:panelGrid columns="2" rendered="#{vehicleServiceController.selected != null}" 
+                                 styleClass="table table-striped table-bordered">
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_id}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.id}" title="#{bundle.ViewVehicleServiceTitle_id}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDate}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceDate}" title="#{bundle.ViewVehicleServiceTitle_serviceDate}" styleClass="text-primary">
                             <f:convertDateTime pattern="MM/dd/yyyy" />
                         </h:outputText>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDetails}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.serviceDetails}" title="#{bundle.ViewVehicleServiceTitle_serviceDetails}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceType}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.serviceType}" title="#{bundle.ViewVehicleServiceTitle_serviceType}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_odoMeterCount}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.odoMeterCount}" title="#{bundle.ViewVehicleServiceTitle_odoMeterCount}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_status}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.status}" title="#{bundle.ViewVehicleServiceTitle_status}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_otherDetails}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.otherDetails}" title="#{bundle.ViewVehicleServiceTitle_otherDetails}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_amount}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.amount}" title="#{bundle.ViewVehicleServiceTitle_amount}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_vehicle}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.vehicle}" title="#{bundle.ViewVehicleServiceTitle_vehicle}"/>
-                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_driver}"/>
-                        <h:outputText value="#{vehicleServiceController.selected.driver}" title="#{bundle.ViewVehicleServiceTitle_driver}"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceDetails}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceDetails}" title="#{bundle.ViewVehicleServiceTitle_serviceDetails}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_serviceType}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.serviceType}" title="#{bundle.ViewVehicleServiceTitle_serviceType}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_odoMeterCount}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.odoMeterCount}" title="#{bundle.ViewVehicleServiceTitle_odoMeterCount}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_status}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.status}" title="#{bundle.ViewVehicleServiceTitle_status}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_otherDetails}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.otherDetails}" title="#{bundle.ViewVehicleServiceTitle_otherDetails}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_amount}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.amount}" title="#{bundle.ViewVehicleServiceTitle_amount}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_vehicle}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.vehicle}" title="#{bundle.ViewVehicleServiceTitle_vehicle}" styleClass="text-primary"/>
+
+                        <h:outputText value="#{bundle.ViewVehicleServiceLabel_driver}" styleClass="font-weight-bold"/>
+                        <h:outputText value="#{vehicleServiceController.selected.driver}" title="#{bundle.ViewVehicleServiceTitle_driver}" styleClass="text-primary"/>
                     </p:panelGrid>
-                    <p:commandButton value="#{bundle.Close}" onclick="VehicleServiceViewDialog.hide()"/>
+
+                    <p:commandButton value="#{bundle.Close}" onclick="VehicleServiceViewDialog.hide()" 
+                                     styleClass="btn btn-secondary mt-3"/>
                 </h:panelGroup>
             </h:form>
         </p:dialog>
+
 
     </ui:composition>
 </html>
