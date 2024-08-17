@@ -10,9 +10,9 @@
 
         <p:dialog id="VehicleServiceCreateDlg" widgetVar="VehicleServiceCreateDialog" modal="true" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" resizable="false" appendTo="@(body)">
             <h5 style="color: indianred; margin-left: 60px;">Vehicle Service and Service Details Register</h5>
-            <h:form id="VehicleServiceCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+            <h:form id="VehicleServiceCreateForm" style="width: 1180px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{vehicleServiceController.selected != null}">
+                    <p:panelGrid columns="4" rendered="#{vehicleServiceController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_id}" for="id" />
                         <p:inputText id="id" value="#{vehicleServiceController.selected.id}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_id}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDate}" for="serviceDate" />
@@ -30,13 +30,15 @@
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_amount}" for="amount" />
                         <p:inputText id="amount" value="#{vehicleServiceController.selected.amount}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_amount}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_vehicle}" for="vehicle" />
-                        <p:selectOneMenu id="vehicle" class="form-control" value="#{vehicleServiceController.selected.vehicle}" >
+                        <p:selectOneMenu id="vehicle" class="form-control" value="#{vehicleServiceController.selected.vehicle}"
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px;">
                             <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
                                            var="vehicleItem"
                                            itemValue="#{vehicleItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_driver}" for="driver" />
-                        <p:selectOneMenu id="driver" class="form-control" value="#{vehicleServiceController.selected.driver}" >
+                        <p:selectOneMenu id="driver" class="form-control" value="#{vehicleServiceController.selected.driver}"
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px;">
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
                                            itemValue="#{driverItem}"/>

@@ -9,31 +9,35 @@
     <ui:composition>
 
         <p:dialog id="FuelTransactionCreateDlg" widgetVar="FuelTransactionCreateDialog" modal="true" resizable="false" appendTo="@(body)" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" >
-            <h5 style="color: indianred; margin-left: 60px;">Petrol Transaction Details Register</h5>
-            <h:form id="FuelTransactionCreateForm" style="width: 780px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+            <h5 style="color: indianred; margin-left: 60px; margin-top: 10px">Petrol Transaction Details Register</h5>
+            <h:form id="FuelTransactionCreateForm" style="width: 1250px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="2" rendered="#{fuelTransactionController.selected != null}">
+                    <p:panelGrid columns="6" rendered="#{fuelTransactionController.selected != null}">
                       
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_intitite}" for="intitite" />
-                        <p:selectOneMenu id="intitite" class="form-control" value="#{fuelTransactionController.selected.intitite}" >
+                        <p:selectOneMenu id="intitite" class="form-control" value="#{fuelTransactionController.selected.intitite}" 
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 9px;">
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="intititeItem"
                                            itemValue="#{intititeItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_vehicle}" for="vehicle" />
-                        <p:selectOneMenu id="vehicle" class="form-control" value="#{fuelTransactionController.selected.vehicle}" >
+                        <p:selectOneMenu id="vehicle" class="form-control" value="#{fuelTransactionController.selected.vehicle}"
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 8px;">
                             <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
                                            var="vehicleItem"
                                            itemValue="#{vehicleItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_fromInstitution}" for="fromInstitution" />
-                        <p:selectOneMenu id="fromInstitution" class="form-control" value="#{fuelTransactionController.selected.fromInstitution}" >
+                        <p:selectOneMenu id="fromInstitution" class="form-control" value="#{fuelTransactionController.selected.fromInstitution}"
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 8px;">
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="fromInstitutionItem"
                                            itemValue="#{fromInstitutionItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_driver}" for="driver" />
-                        <p:selectOneMenu id="driver" class="form-control" value="#{fuelTransactionController.selected.driver}" >
+                        <p:selectOneMenu id="driver" class="form-control" value="#{fuelTransactionController.selected.driver}"
+                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px;">
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
                                            itemValue="#{driverItem}"/>

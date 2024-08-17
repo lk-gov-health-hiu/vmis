@@ -22,7 +22,7 @@
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_type}" for="type" />
                         <p:inputText id="type" value="#{institutionController.selected.type}" class="form-control"  title="#{bundle.CreateInstitutionTitle_type}" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_parent}" for="parent" />
-                        <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" class="form-control"  style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;" >
+                        <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" class="form-control"  style="border: 1px solid #4A90E2; border-radius: 5px; padding: 10px;" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="parentItem"
                                            itemValue="#{parentItem}"/>
