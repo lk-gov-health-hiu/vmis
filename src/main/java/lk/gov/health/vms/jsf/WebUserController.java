@@ -18,6 +18,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import lk.gov.health.enums.WebuserRole;
 
 @Named("webUserController")
 @SessionScoped
@@ -53,6 +54,10 @@ public class WebUserController implements Serializable {
         selected = new WebUser();
         initializeEmbeddableKey();
         return selected;
+    }
+    
+     public WebuserRole[] getWebuserRoles() {
+        return WebuserRole.values();
     }
 
     public void create() {

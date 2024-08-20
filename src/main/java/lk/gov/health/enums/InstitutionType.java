@@ -34,6 +34,7 @@ public enum InstitutionType {
     Indigenous_Medicine_Department("Indigenous Medicine Department", InstitutionCategory.FUEL_RECEIVER),
     Ayurvedic_Department("Ayurvedic Department", InstitutionCategory.FUEL_RECEIVER),
     Ayurvedic_Hospital("Ayurvedic Hospital", InstitutionCategory.FUEL_RECEIVER),
+    
     Provincial_Ayurvedic_Department("Provincial Ayurvedic Department", InstitutionCategory.FUEL_RECEIVER),
     District_Ayurvedic_Department("District Ayurvedic Department", InstitutionCategory.FUEL_RECEIVER),
     Herbal_Guardian("Herbal Guardian", InstitutionCategory.FUEL_RECEIVER),
@@ -55,5 +56,6 @@ public enum InstitutionType {
     public InstitutionCategory getCategory() {
         return category;
     }
+    
     
 }

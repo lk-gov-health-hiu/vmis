@@ -13,7 +13,7 @@
             <h:form id="WebUserCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
-                        
+
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_name}" for="name" />
                         <p:inputText id="name" class="form-control"  value="#{webUserController.selected.name}" title="#{bundle.CreateWebUserTitle_name}" />
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_institution}" for="institution" />
@@ -23,12 +23,19 @@
                                            var="institutionItem"
                                            itemValue="#{institutionItem}"/>
                         </p:selectOneMenu>
+                        
+                        
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_username}" for="username" />
                         <p:inputText id="username" class="form-control"  value="#{webUserController.selected.username}" title="#{bundle.CreateWebUserTitle_username}" />
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_password}" for="password" />
                         <p:inputText id="password" class="form-control"  value="#{webUserController.selected.password}" title="#{bundle.CreateWebUserTitle_password}" />
-                        <p:outputLabel value="#{bundle.CreateWebUserLabel_type}" for="type" />
-                        <p:inputText id="type" class="form-control"  value="#{webUserController.selected.type}" title="#{bundle.CreateWebUserTitle_type}" />
+                        <p:outputLabel value="Type" for="role" />
+                        <p:selectOneMenu id="role" class="form-control" value="#{webUserController.selected.type}" 
+                                         style="border: 1px solid #4A90E2;  border-radius: 5px; padding: 3px;">
+                            <f:selectItems value="#{webUserController.webuserRoles}" var="role" 
+                                           itemValue="#{type}" itemLabel="#{type.label}" />
+                        </p:selectOneMenu>
+
                     </p:panelGrid>
                     <p:commandButton actionListener="#{webUserController.create}" icon="pi pi-save" style="background-color: indigo; margin-right: 10px;" value="#{bundle.Save}" update="display,:WebUserListForm:datalist," oncomplete="handleSubmit(args,'WebUserCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" icon="pi pi-times" style="background-color: blueviolet;" onclick="WebUserCreateDialog.hide()"/>
