@@ -13,12 +13,12 @@
             <h:form id="WebUserCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
-                        <p:outputLabel value="#{bundle.CreateWebUserLabel_id}" for="id" />
-                        <p:inputText id="id" class="form-control"  value="#{webUserController.selected.id}" title="#{bundle.CreateWebUserTitle_id}" />
+                        
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_name}" for="name" />
                         <p:inputText id="name" class="form-control"  value="#{webUserController.selected.name}" title="#{bundle.CreateWebUserTitle_name}" />
                         <p:outputLabel value="#{bundle.CreateWebUserLabel_institution}" for="institution" />
-                        <p:selectOneMenu id="institution"  class="form-control"  value="#{webUserController.selected.institution}" >
+                        <p:selectOneMenu id="institution"  class="form-control"  value="#{webUserController.selected.institution}"
+                                         style="border: 1px solid #4A90E2; border-radius: 5px; padding: 10px;">
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne} "
                                            var="institutionItem"
                                            itemValue="#{institutionItem}"/>

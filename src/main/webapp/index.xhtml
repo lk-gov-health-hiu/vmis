@@ -1,60 +1,82 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-       xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <head>
+        <title>User Login</title>
+    </head>
 
     <body>
 
         <ui:composition template="./template.xhtml">
 
-            
-           <ui:define name="body">
-                <div class="container-fluid" style="margin-left: 1pt; margin-top: 30px ;border: 20pt">
-                    
-                    <h:form style="background-color: pink  ; margin-right: 780pt ;height: 60px" >
-                        <i class="pi pi-home" style="font-size: 2rem"></i>
-                        <h:commandButton action="/institution/List?faces-redirect=true"  value="Manage Institutions " styleClass="btn btn" />
-                    </h:form>
-                    
-                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt;height: 60px">
-                        <i class="pi pi-car" style="font-size: 2rem"></i>
-                        <h:commandButton action="/vehicle/List?faces-redirect=true" value=" Manage Vehicles" styleClass="btn btn" />
-                    </h:form>
-
-                    
-                    <h:form style="background-color:  pink ; margin-right: 780pt;height: 60px">
-                        <i class="pi pi-users" style="font-size: 2rem"></i>
-                        <h:commandButton action="/driver/List?faces-redirect=true" value="Manage Drivers  " styleClass="btn btn" />
-                    </h:form >
-                    
-                    <h:form style="background-color: blanchedalmond; margin-right: 780pt;height: 60px">
-                         <i class="pi pi-prime" style="font-size: 2rem"></i>
-                        <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="Manage Fuel Transactions" styleClass="btn btn" />
-                    </h:form>
-                   
-                    <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
-                        <i class="pi pi-server" style="font-size: 2rem"></i>
-                        <h:commandButton action="/vehicleService/List?faces-redirect=true" value="Manage Vehicle Rapairs" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color:  blanchedalmond; margin-right: 780pt;height: 60px">
-                        <i class="pi pi-user" style="font-size: 2rem"></i>
-                        <h:commandButton action="/webUser/List?faces-redirect=true" value="Manage Users" styleClass="btn btn" />
-                    </h:form>
-                    <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
-                        <i class="pi pi-book" style="font-size: 2rem"></i>
-                        <h:commandButton action="report?faces-redirect=true" value="Manage System Reports" styleClass="btn btn" />
-                    </h:form>
-                </div>   
+            <ui:define name="top">
 
             </ui:define>
-            <ui:define name="footer" >
-                <footer class="footer text-center" style="margin-top: 125px ;background-color: #b2d5d6; color: indigo " >
-                    <p> &copy; Health Information Unit, Ministry of Health Sri Lanka <strong>2024</strong></p>
-                </footer>
+
+            <ui:define name="body">
+                <h:form>
+                    <div class="container-fluid">
+
+                        <h4 style="margin-left: 465px; color: #045491;font-family: serif; margin-top: 30px ;font-weight: bold">Vehicle Management Information System</h4>
+                    </div>
+                    <div class="container" style="max-width: 400px; margin-top: 80px;">
+                        <div class="card shadow-lg border-0 rounded-lg">
+                            <div class="card-header  text-primary" style="background-color: #b2d5d6">
+                                <i class="pi pi-user-plus" style="font-size: 2rem;margin-top: 5px"></i>
+                                <h2 class="text-center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-bottom: 0;">User Login</h2>
+                            </div>
+                            <div class="card-body" style="background-color: #FFFFFF;">
+                         
+                                    <div class="form-group">
+                                        <label for="username" style="font-weight: bold; color: #2F4F4F;">Username:</label>
+                                        <h:inputText id="username" value="#{sessionController.username}" styleClass="form-control" style="border: 1px solid #B0C4DE;"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" style="font-weight: bold; color: #2F4F4F;">Password:</label>
+                                        <h:inputSecret id="password" value="#{sessionController.password}" styleClass="form-control" style="border: 1px solid #B0C4DE;"/>
+                                    </div>
+                                    <div class="text-center">
+                                        <p:commandButton value="Login" ajax="false" icon="pi pi-arrow-right" action="#{sessionController.checkuser}" styleClass="btn btn-success btn-block" style="font-weight: bold; margin-top: 1em "/>
+                                    </div>
+                               
+                            </div>
+                            <div class="card-footer text-center" style="background-color: #F8F9FA;">
+                                <small style="color: #696969;">&copy; Health Information Unit, Ministry of Health Sri Lanka  <a href="#" style="color: #4682B4;"><strong>2024</strong></a></small>
+                            </div>
+                            <div class="row">
+                                <div class="my-2 d-flex justify-content-around">
+                                    <h:graphicImage style="height: 7em; width:130px;" library="image"  name="login1.png"></h:graphicImage>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+
+            </ui:define>
+
+            <ui:define name="footer">
+
             </ui:define>
 
         </ui:composition>
 
+
+
     </body>
 </html>
+
+<!--
+<div class="row">
+    <div class="my-2 d-flex justify-content-around">
+        <h:graphicImage style="height: 5em;" library="image" name="cpc.png"></h:graphicImage>
+        <h:graphicImage style="height: 5em; width:130px;" library="image"  name="jics.svg"></h:graphicImage>
+        <h:graphicImage style="height: 5em;" class="bg-light" library="image" name="sl.png"></h:graphicImage>
+        <h:graphicImage style="height: 5em;" library="image" name="sltb-logo.png"></h:graphicImage>
+    </div>
+</div>-->

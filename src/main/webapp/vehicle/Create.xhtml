@@ -29,7 +29,8 @@
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_mainpurpose}" for="mainpurpose" />
                         <p:inputText id="mainpurpose" value="#{vehicleController.selected.mainpurpose}" title="#{bundle.CreateVehicleTitle_mainpurpose}" />
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_driver}" for="driver" />
-                        <p:selectOneMenu id="driver" value="#{vehicleController.selected.driver}" >
+                        <p:selectOneMenu id="driver" value="#{vehicleController.selected.driver}" 
+                                         style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px; width: 200px" >
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
                                            itemValue="#{driverItem}"/>
