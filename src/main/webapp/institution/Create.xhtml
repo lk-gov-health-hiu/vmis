@@ -20,7 +20,13 @@
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_address}" for="address" />
                         <p:inputTextarea rows="4" cols="30" id="address" value="#{institutionController.selected.address}" class="form-control"  title="#{bundle.CreateInstitutionTitle_address}" />
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_type}" for="type" />
-                        <p:inputText id="type" value="#{institutionController.selected.type}" class="form-control"  title="#{bundle.CreateInstitutionTitle_type}" />
+                        <p:selectOneMenu id="type" class="form-control" value="#{institutionController.selected.type}" 
+                                         style="border: 1px solid #4A90E2;  border-radius: 5px; padding: 3px;">
+                            <f:selectItems value="#{InstitutionController.getInstitution}" var="type" 
+                                           itemValue="#{type}" itemLabel="#{type.label}" />
+                            
+                            
+                        </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_parent}" for="parent" />
                         <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" class="form-control"  style="border: 1px solid #4A90E2; border-radius: 5px; padding: 10px;" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"

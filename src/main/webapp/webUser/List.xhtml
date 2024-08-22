@@ -28,12 +28,12 @@
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
+<!--                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListWebUserTitle_id}"/>
                             </f:facet>
                             <h:outputText value="#{item.id}"/>
-                        </p:column>
+                        </p:column>-->
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListWebUserTitle_name}"/>
@@ -52,12 +52,12 @@
                             </f:facet>
                             <h:outputText value="#{item.username}"/>
                         </p:column>
-                        <p:column>
+<!--                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListWebUserTitle_password}"/>
                             </f:facet>
                             <h:outputText value="#{item.password}"/>
-                        </p:column>
+                        </p:column>-->
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListWebUserTitle_type}"/>

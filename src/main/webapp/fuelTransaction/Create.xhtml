@@ -12,7 +12,7 @@
             <h5 style="color: indianred; margin-left: 60px; margin-top: 10px">Petrol Transaction Details Register</h5>
             <h:form id="FuelTransactionCreateForm" style="width: 1250px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
-                    <p:panelGrid columns="6" rendered="#{fuelTransactionController.selected != null}">
+                    <p:panelGrid columns="4" rendered="#{fuelTransactionController.selected != null}">
                       
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_intitite}" for="intitite" />
                         <p:selectOneMenu id="intitite" class="form-control" value="#{fuelTransactionController.selected.intitite}" 

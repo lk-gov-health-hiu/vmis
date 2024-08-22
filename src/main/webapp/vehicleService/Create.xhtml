@@ -10,15 +10,16 @@
 
         <p:dialog id="VehicleServiceCreateDlg" widgetVar="VehicleServiceCreateDialog" modal="true" style="background-color: plum; padding: 20px; border-radius: 20px; width: 850px; height: 400px" resizable="false" appendTo="@(body)">
             <h5 style="color: indianred; margin-left: 60px;">Vehicle Service and Repair Details Register</h5>
-            <h:form id="VehicleServiceCreateForm" style="width: 1180px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+            <h:form id="VehicleServiceCreateForm" style="width: 1240px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="4" rendered="#{vehicleServiceController.selected != null}">
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_id}" for="id" />
                         <p:inputText id="id" value="#{vehicleServiceController.selected.id}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_id}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDate}" for="serviceDate" />
                         <p:calendar id="serviceDate" pattern="MM/dd/yyyy" value="#{vehicleServiceController.selected.serviceDate}" class="form-control" title="#{bundle.EditVehicleServiceTitle_serviceDate}"  showOn="button"/>
-                        <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDetails}" for="serviceDetails" />
-                        <p:inputText id="serviceDetails" value="#{vehicleServiceController.selected.serviceDetails}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_serviceDetails}" />
+                        <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceDetails}" for="serviceDetails" style="margin-top: 5px" />
+                        <p:inputText id="serviceDetails" value="#{vehicleServiceController.selected.serviceDetails}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_serviceDetails}"  />
+
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_serviceType}" for="serviceType" />
                         <p:inputText id="serviceType" value="#{vehicleServiceController.selected.serviceType}" class="form-control" title="#{bundle.CreateVehicleServiceTitle_serviceType}" />
                         <p:outputLabel value="#{bundle.CreateVehicleServiceLabel_odoMeterCount}" for="odoMeterCount" />
@@ -52,3 +53,4 @@
 
     </ui:composition>
 </html>
+<!--                        <p:inputTextarea rows="4" cols="30" id="serviceDetails" value="#{vehicleServiceController.selected.serviceDetails}" class="form-control"  title="#{bundle.CreateVehicleServiceTitle_serviceDetails}"  style="margin-top: 10px;margin-left: 2px"/>-->

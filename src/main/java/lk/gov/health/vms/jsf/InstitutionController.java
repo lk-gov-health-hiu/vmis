@@ -18,6 +18,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import lk.gov.health.enums.InstitutionType;
 
 @Named("institutionController")
 @SessionScoped
@@ -54,6 +55,10 @@ public class InstitutionController implements Serializable {
         initializeEmbeddableKey();
         return selected;
     }
+      public InstitutionType[] getInstitution() {
+        return InstitutionType.values();
+    }
+
 
     public void create() {
         persist(PersistAction.CREATE, ResourceBundle.getBundle("/Bundle").getString("InstitutionCreated"));
