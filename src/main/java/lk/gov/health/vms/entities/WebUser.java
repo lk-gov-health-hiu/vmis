@@ -30,6 +30,10 @@ public class WebUser implements Serializable {
     private String type;
     
     
+    private boolean retired;
+    
+    
+    
 
     public Long getId() {
         return id;
@@ -102,6 +106,14 @@ public class WebUser implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public boolean isRetired() {
+        return retired;
+    }
+
+    public void setRetired(boolean retired) {
+        this.retired = retired;
     }
     
 }
