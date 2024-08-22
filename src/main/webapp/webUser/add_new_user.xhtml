@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="/admin/index.xhtml">
+
+            <ui:define name="contents">
+
+                <h:form id="WebUserCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+                    <h:panelGroup id="display">
+                        <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
+
+                            <p:outputLabel value="#{bundle.CreateWebUserLabel_name}" for="name" />
+                            <p:inputText id="name" class="form-control"  value="#{webUserController.selected.name}" title="#{bundle.CreateWebUserTitle_name}" />
+                            <p:outputLabel value="#{bundle.CreateWebUserLabel_institution}" for="institution" />
+                            <p:selectOneMenu id="institution"  class="form-control"  value="#{webUserController.selected.institution}"
+                                             style="border: 1px solid #4A90E2; border-radius: 5px; padding: 10px;">
+                                <f:selectItems value="#{institutionController.itemsAvailableSelectOne} "
+                                               var="institutionItem"
+                                               itemValue="#{institutionItem}"/>
+                            </p:selectOneMenu>
+
+
+                            <p:outputLabel value="Username" for="username" />
+                            <p:inputText id="username" class="form-control"
+                                         value="#{webUserController.selected.username}" 
+                                         title="#{bundle.CreateWebUserTitle_username}" />
+                            
+                            <p:outputLabel value="Password" for="password" />
+                            <p:password 
+                                id="password" 
+                                class="form-control"  
+                                match="password"
+                                toggleMask="true"
+                                value="#{webUserController.password}"  />
+
+                            <p:outputLabel value="Confirm Password" for="passwordConfirm" />
+                            <p:password 
+                                toggleMask="true"
+                                
+                                id="passwordConfirm" 
+                                class="form-control"  />
+
+
+                            <p:outputLabel value="Type" for="role" />
+                            <p:selectOneMenu id="role" class="form-control" value="#{webUserController.selected.type}" 
+                                             style="border: 1px solid #4A90E2;  border-radius: 5px; padding: 3px;">
+                                <f:selectItems value="#{webUserController.webuserRoles}" var="role" 
+                                               itemValue="#{type}" itemLabel="#{type.label}" />
+                            </p:selectOneMenu>
+
+                        </p:panelGrid>
+                        <p:commandButton 
+                            action="#{webUserController.saveNewUser()}" 
+                            icon="pi pi-save"
+                            ajax="false"
+                            style="background-color: indigo; margin-right: 10px;" 
+                            value="#{bundle.Save}" 
+                            />
+                        
+                        
+                        <p:messages ></p:messages>
+                        
+                    </h:panelGroup>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

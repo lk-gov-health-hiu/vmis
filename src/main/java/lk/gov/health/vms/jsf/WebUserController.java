@@ -6,6 +6,7 @@ import lk.gov.health.vms.jsf.util.JsfUtil.PersistAction;
 import lk.gov.health.vms.beans.WebUserFacade;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -19,6 +20,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import lk.gov.health.enums.WebuserRole;
+import org.jasypt.util.password.StrongPasswordEncryptor;
 
 @Named("webUserController")
 @SessionScoped
@@ -28,8 +30,68 @@ public class WebUserController implements Serializable {
     private lk.gov.health.vms.beans.WebUserFacade ejbFacade;
     private List<WebUser> items = null;
     private WebUser selected;
+    String password;
+    private String oldPassword;
 
     public WebUserController() {
+    }
+
+    public String navigateToAddNewUser() {
+        selected = new WebUser();
+        return "/webUser/add_new_user?faces-redirect=true";
+    }
+
+    public String navigateToViewUser() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("No User");
+            return null;
+        }
+        return "/webUser/view_user?faces-redirect=true";
+    }
+
+    public String navigateToEditUser() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("No User");
+            return null;
+        }
+        return "/webUser/edit_user?faces-redirect=true";
+    }
+
+    public String navigateToListUsers() {
+        items = fillAllUsers();
+        return "/webUser/list_users?faces-redirect=true";
+    }
+
+    public String navigateToChangePassword() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("No User");
+            return null;
+        }
+        return "/webUser/change_password?faces-redirect=true";
+    }
+
+    private List<WebUser> fillAllUsers() {
+        String jpql = "select renuka "
+                + " from WebUser renuka "
+                + " where renuka.retired=:ret ";
+        HashMap params = new HashMap();
+        params.put("ret", false);
+        return getFacade().findByJpql(jpql, params);
+    }
+
+    public String changeOldPassword() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("No user");
+            return null;
+        }
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+        String plainPassword = password;
+        String hashedPassword = passwordEncryptor.encryptPassword(plainPassword);
+        System.out.println("Hashed Password: " + hashedPassword);
+        selected.setPassword(hashedPassword);
+        getFacade().edit(selected);
+        JsfUtil.addSuccessMessage("Password changed");
+        return navigateToListUsers();
     }
 
     public WebUser getSelected() {
@@ -55,8 +117,16 @@ public class WebUserController implements Serializable {
         initializeEmbeddableKey();
         return selected;
     }
-    
-     public WebuserRole[] getWebuserRoles() {
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public WebuserRole[] getWebuserRoles() {
         return WebuserRole.values();
     }
 
@@ -65,6 +135,34 @@ public class WebUserController implements Serializable {
         if (!JsfUtil.isValidationFailed()) {
             items = null;    // Invalidate list of items to trigger re-query.
         }
+    }
+
+    public String saveNewUser() {
+        if (selected == null) {
+            JsfUtil.addErrorMessage("No User");
+            return null;
+        }
+
+        if (selected.getName().trim().equals("")) {
+            JsfUtil.addErrorMessage("No name");
+            return null;
+        }
+
+        if (selected.getUsername().trim().equals("")) {
+            JsfUtil.addErrorMessage("No Username");
+            return null;
+        }
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+
+        String hashedPassword = passwordEncryptor.encryptPassword(password);
+        selected.setPassword(hashedPassword);
+        if (selected.getId() == null) {
+            getFacade().create(selected);
+        } else {
+            getFacade().edit(selected);
+        }
+        JsfUtil.addSuccessMessage("New User Added");
+        return navigateToListUsers();
     }
 
     public void update() {
@@ -124,6 +222,14 @@ public class WebUserController implements Serializable {
 
     public List<WebUser> getItemsAvailableSelectOne() {
         return getFacade().findAll();
+    }
+
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
     }
 
     @FacesConverter(forClass = WebUser.class)
