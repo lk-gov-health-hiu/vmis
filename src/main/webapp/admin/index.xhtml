@@ -7,7 +7,7 @@
 
     <body>
 
-        <ui:composition template="/template.xhtml">
+       <ui:composition template="/template.xhtml">
 
             <ui:define name="body">
                 <div class="container-fluid" >
@@ -15,9 +15,8 @@
                     <div class="row" >
                         <div class="col-4" >
                             <h:form >
-                                <p:commandButton ajax="false" value="Add New User" action="#{webUserController.navigateToAddNewUser()}" ></p:commandButton>
-                                <p:commandButton ajax="false" value="List Users" action="#{webUserController.navigateToListUsers()}" ></p:commandButton>
-
+                                <p:commandButton ajax="false" icon="pi pi-user-plus"  style="background-color: blueviolet ; margin-right: 10px;" value="Add New User" action="#{webUserController.navigateToAddNewUser()}" ></p:commandButton>
+                                <p:commandButton ajax="false" icon="pi pi-users" style="background-color:  indigo; margin-right: 10px;" value="List Users" action="#{webUserController.navigateToListUsers()}" ></p:commandButton>
 
                             </h:form>
 
@@ -34,6 +33,7 @@
             </ui:define>
 
         </ui:composition>
+
 
     </body>
 </html>

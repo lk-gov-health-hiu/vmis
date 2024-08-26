@@ -22,7 +22,7 @@
                         <p:outputLabel value="#{bundle.CreateInstitutionLabel_type}" for="type" />
                         <p:selectOneMenu id="type" class="form-control" value="#{institutionController.selected.type}" 
                                          style="border: 1px solid #4A90E2;  border-radius: 5px; padding: 3px;">
-                            <f:selectItems value="#{InstitutionController.getInstitution}" var="type" 
+                            <f:selectItems value="#{InstitutionController.getlistofinstitute}" var="type" 
                                            itemValue="#{type}" itemLabel="#{type.label}" />
                             
                             

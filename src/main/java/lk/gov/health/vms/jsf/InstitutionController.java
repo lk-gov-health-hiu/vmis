@@ -35,7 +35,11 @@ public class InstitutionController implements Serializable {
     public Institution getSelected() {
         return selected;
     }
-
+    //////////////////////////////////////////////////
+     public InstitutionType[] getlistofinstitute() {
+        return InstitutionType.values();
+    }
+    /////////////////////////////////////////////////
     public void setSelected(Institution selected) {
         this.selected = selected;
     }

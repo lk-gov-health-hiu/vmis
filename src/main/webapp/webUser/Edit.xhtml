@@ -25,12 +25,11 @@
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.EditWebUserLabel_username}" for="username" />
                         <p:inputText id="username" value="#{webUserController.selected.username}" title="#{bundle.EditWebUserTitle_username}" />
-                        <p:outputLabel value="#{bundle.EditWebUserLabel_password}" for="password" />
-                        <p:inputText id="password" value="#{webUserController.selected.password}" title="#{bundle.EditWebUserTitle_password}" />
+                       
                         <p:outputLabel value="#{bundle.EditWebUserLabel_type}" for="type" />
                         <p:inputText id="type" value="#{webUserController.selected.type}" title="#{bundle.EditWebUserTitle_type}" />
                     </p:panelGrid>
-                    <p:commandButton actionListener="#{webUserController.update}" value="#{bundle.Save}" update="display,:WebUserListForm:datalist," oncomplete="handleSubmit(args, 'WebUserEditDialog');"/>
+                    <p:commandButton actionListener="#{webUserController.update}" icon="pi pi-check-circle" value="#{bundle.Save}" update="display,:WebUserListForm:datalist," oncomplete="handleSubmit(args, 'WebUserEditDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="WebUserEditDialog.hide()"/>
                 </h:panelGroup>
             </h:form>

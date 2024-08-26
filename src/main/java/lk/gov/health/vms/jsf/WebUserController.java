@@ -20,6 +20,9 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import lk.gov.health.enums.WebuserRole;
+import lk.gov.health.vms.entities.Driver;
+import lk.gov.health.vms.entities.Institution;
+import lk.gov.health.vms.entities.Vehicle;
 import org.jasypt.util.password.StrongPasswordEncryptor;
 
 @Named("webUserController")
@@ -32,6 +35,12 @@ public class WebUserController implements Serializable {
     private WebUser selected;
     String password;
     private String oldPassword;
+    String username;
+
+    private List<WebUser> managableUsers;
+    private List<Institution> loggableInstitutions;
+    private List<Vehicle> managableVehicles;
+    private List<Driver> managableDrivers;
 
     public WebUserController() {
     }
@@ -136,6 +145,7 @@ public class WebUserController implements Serializable {
             items = null;    // Invalidate list of items to trigger re-query.
         }
     }
+// method for cereate new user  ------------------------------------------------
 
     public String saveNewUser() {
         if (selected == null) {
@@ -164,6 +174,7 @@ public class WebUserController implements Serializable {
         JsfUtil.addSuccessMessage("New User Added");
         return navigateToListUsers();
     }
+//------------------------------------------------------------------------------
 
     public void update() {
         persist(PersistAction.UPDATE, ResourceBundle.getBundle("/Bundle").getString("WebUserUpdated"));
@@ -175,6 +186,36 @@ public class WebUserController implements Serializable {
             selected = null; // Remove selection
             items = null;    // Invalidate list of items to trigger re-query.
         }
+    }
+
+    //LOGIN_____________________________________________________________________
+    public String login() {
+       
+        if(username==null|| username.trim().equals("")){
+            JsfUtil.addErrorMessage("please enter user name");
+            return"";
+        }
+        if(password==null||password.trim().equals("")){
+            JsfUtil.addErrorMessage("please enter password");
+            return"";
+        }
+        if (authenticate(username, password)) {
+            loginn1(); // Log the successful login
+            return "/home?faces-redirect=true"; 
+        } else {
+            JsfUtil.addErrorMessage("Invalid username or password");
+            return "";
+        }
+       
+          
+    }
+    private void loginn1(){
+        
+         JsfUtil.addSuccessMessage("Successfully Logged");
+    }
+    private boolean authenticate(String username, String password) {
+       
+        return username.equals(username) && password.equals(password); 
     }
 
     public List<WebUser> getItems() {

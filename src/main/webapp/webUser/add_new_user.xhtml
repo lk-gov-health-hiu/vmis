@@ -13,7 +13,9 @@
             <ui:define name="contents">
 
                 <h:form id="WebUserCreateForm" style="width: 600px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight;">
+                     <p:messages ></p:messages>
                     <h:panelGroup id="display">
+                        <h5 style="color: indianred; margin-left: 60px;">User Register</h5>
                         <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
 
                             <p:outputLabel value="#{bundle.CreateWebUserLabel_name}" for="name" />
@@ -65,7 +67,7 @@
                             />
                         
                         
-                        <p:messages ></p:messages>
+                       
                         
                     </h:panelGroup>
                 </h:form>

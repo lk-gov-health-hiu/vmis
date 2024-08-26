@@ -13,10 +13,10 @@
             <ui:define name="contents">
 
                 <h:form id="WebUserEditForm">
+                                                <h5>Change My Details</h5>
+
                     <h:panelGroup id="display">
                         <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
-                            <p:outputLabel value="#{bundle.EditWebUserLabel_id}" for="id" />
-                            <p:inputText id="id" value="#{webUserController.selected.id}" title="#{bundle.EditWebUserTitle_id}" />
                             <p:outputLabel value="#{bundle.EditWebUserLabel_name}" for="name" />
                             <p:inputText id="name" value="#{webUserController.selected.name}" title="#{bundle.EditWebUserTitle_name}" />
                             <p:outputLabel value="#{bundle.EditWebUserLabel_institution}" for="institution" />
@@ -28,8 +28,7 @@
                             </p:selectOneMenu>
                             <p:outputLabel value="#{bundle.EditWebUserLabel_username}" for="username" />
                             <p:inputText id="username" value="#{webUserController.selected.username}" title="#{bundle.EditWebUserTitle_username}" />
-                            <p:outputLabel value="#{bundle.EditWebUserLabel_password}" for="password" />
-                            <p:inputText id="password" value="#{webUserController.selected.password}" title="#{bundle.EditWebUserTitle_password}" />
+                           
                             <p:outputLabel value="#{bundle.EditWebUserLabel_type}" for="type" />
                             <p:inputText id="type" value="#{webUserController.selected.type}" title="#{bundle.EditWebUserTitle_type}" />
                         </p:panelGrid>

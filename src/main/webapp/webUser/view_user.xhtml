@@ -15,16 +15,14 @@
                 <h:form id="WebUserViewForm">
                     <h:panelGroup id="display">
                         <p:panelGrid columns="2" rendered="#{webUserController.selected != null}">
-                            <h:outputText value="#{bundle.ViewWebUserLabel_id}"/>
-                            <h:outputText value="#{webUserController.selected.id}" title="#{bundle.ViewWebUserTitle_id}"/>
+                          
                             <h:outputText value="#{bundle.ViewWebUserLabel_name}"/>
                             <h:outputText value="#{webUserController.selected.name}" title="#{bundle.ViewWebUserTitle_name}"/>
                             <h:outputText value="#{bundle.ViewWebUserLabel_institution}"/>
                             <h:outputText value="#{webUserController.selected.institution}" title="#{bundle.ViewWebUserTitle_institution}"/>
                             <h:outputText value="#{bundle.ViewWebUserLabel_username}"/>
                             <h:outputText value="#{webUserController.selected.username}" title="#{bundle.ViewWebUserTitle_username}"/>
-                            <h:outputText value="#{bundle.ViewWebUserLabel_password}"/>
-                            <h:outputText value="#{webUserController.selected.password}" title="#{bundle.ViewWebUserTitle_password}"/>
+                           
                             <h:outputText value="#{bundle.ViewWebUserLabel_type}"/>
                             <h:outputText value="#{webUserController.selected.type}" title="#{bundle.ViewWebUserTitle_type}"/>
                         </p:panelGrid>

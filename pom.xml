@@ -35,6 +35,12 @@
             <artifactId>primefaces</artifactId>
             <version>13.0.8</version>
         </dependency>
+<!--        <dependency>
+            <groupId>lk.gov.health</groupId>
+            <artifactId>vmc-v2</artifactId>
+            <version>1.0</version>
+            <type>war</type>
+        </dependency>-->
     </dependencies>
     
     <build>

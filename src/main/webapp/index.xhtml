@@ -40,7 +40,7 @@
                                         <h:inputSecret id="password" value="#{sessionController.password}" styleClass="form-control" style="border: 1px solid #B0C4DE;"/>
                                     </div>
                                     <div class="text-center">
-                                        <p:commandButton value="Login" ajax="false" icon="pi pi-arrow-right" action="#{sessionController.checkuser}" styleClass="btn btn-success btn-block" style="font-weight: bold; margin-top: 1em "/>
+                                        <p:commandButton value="Login" ajax="false" icon="pi pi-arrow-right" action="#{webUserController.login()}" styleClass="btn btn-success btn-block" style="font-weight: bold; margin-top: 1em "/>
                                     </div>
                                
                             </div>
