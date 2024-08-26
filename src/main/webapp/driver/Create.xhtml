@@ -32,6 +32,7 @@
                                          style="border: 1px solid #4A90E2; border-radius: 5px; padding: 5px;">
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="institutionItem"
+                                           itemLabel="#{institutionItem.name}"
                                            itemValue="#{institutionItem}"/>
                         </p:selectOneMenu>
                     </p:panelGrid>
