@@ -8,6 +8,7 @@ import lk.gov.health.vms.beans.WebUserFacade;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,9 +34,10 @@ public class WebUserController implements Serializable {
     private lk.gov.health.vms.beans.WebUserFacade ejbFacade;
     private List<WebUser> items = null;
     private WebUser selected;
+    private WebUser loggedUser;
     String password;
     private String oldPassword;
-    String username;
+    private String username;
 
     private List<WebUser> managableUsers;
     private List<Institution> loggableInstitutions;
@@ -190,32 +192,54 @@ public class WebUserController implements Serializable {
 
     //LOGIN_____________________________________________________________________
     public String login() {
-       
-        if(username==null|| username.trim().equals("")){
+        if (username == null || username.trim().equals("")) {
             JsfUtil.addErrorMessage("please enter user name");
-            return"";
+            return "";
         }
-        if(password==null||password.trim().equals("")){
+        if (password == null || password.trim().equals("")) {
             JsfUtil.addErrorMessage("please enter password");
-            return"";
+            return "";
         }
         if (authenticate(username, password)) {
-            loginn1(); // Log the successful login
-            return "/home?faces-redirect=true"; 
+            return "/home?faces-redirect=true";
         } else {
             JsfUtil.addErrorMessage("Invalid username or password");
             return "";
         }
-       
-          
+
     }
-    private void loginn1(){
-        
-         JsfUtil.addSuccessMessage("Successfully Logged");
-    }
+
+    
+
+    
+     
+    
     private boolean authenticate(String username, String password) {
-       
-        return username.equals(username) && password.equals(password); 
+        loggedUser=null;
+        String jpql = "Select wu "
+                + " from WebUser wu "
+                + " where wu.retired=:ret"
+                + " and wu.name=:un ";
+        Map m = new HashMap();
+        m.put("ret", false);
+        m.put("un", username);
+        System.out.println("m = " + m);
+        System.out.println("jpql = " + jpql);
+        WebUser wu = getFacade().findFirstByJpql(jpql, m);
+        System.out.println("wu = " + wu);
+        if (wu == null) {
+            JsfUtil.addErrorMessage("No User");
+            return false;
+        }
+        StrongPasswordEncryptor passwordEncryptor = new StrongPasswordEncryptor();
+        if (passwordEncryptor.checkPassword(password, wu.getPassword())) {
+            loggedUser = wu;
+            JsfUtil.addSuccessMessage("Logged Successfully");
+            return true;
+        } else {
+            JsfUtil.addErrorMessage("Wring password");
+            return false;
+        }
     }
 
     public List<WebUser> getItems() {
@@ -272,6 +296,24 @@ public class WebUserController implements Serializable {
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
     }
+
+    public WebUser getLoggedUser() {
+        return loggedUser;
+    }
+
+    public void setLoggedUser(WebUser loggedUser) {
+        this.loggedUser = loggedUser;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
 
     @FacesConverter(forClass = WebUser.class)
     public static class WebUserControllerConverter implements Converter {
