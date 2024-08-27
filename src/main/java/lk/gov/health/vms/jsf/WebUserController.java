@@ -219,7 +219,7 @@ public class WebUserController implements Serializable {
         String jpql = "Select wu "
                 + " from WebUser wu "
                 + " where wu.retired=:ret"
-                + " and wu.name=:un ";
+                + " and wu.username=:un ";
         Map m = new HashMap();
         m.put("ret", false);
         m.put("un", username);
@@ -237,7 +237,8 @@ public class WebUserController implements Serializable {
             JsfUtil.addSuccessMessage("Logged Successfully");
             return true;
         } else {
-            JsfUtil.addErrorMessage("Wring password");
+            System.out.println(password);
+            JsfUtil.addErrorMessage("Wrong password");
             return false;
         }
     }
