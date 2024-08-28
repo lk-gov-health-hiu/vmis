@@ -31,7 +31,8 @@
                         <p:selectOneMenu id="parent" value="#{institutionController.selected.parent}" class="form-control"  style="border: 1px solid #4A90E2; border-radius: 5px; padding: 10px;" >
                             <f:selectItems value="#{institutionController.itemsAvailableSelectOne}"
                                            var="parentItem"
-                                           itemValue="#{parentItem}"/>
+                                           itemValue="#{parentItem}"
+                                           itemLabel="#{parentItem.name}"/>
                         </p:selectOneMenu>
                     </p:panelGrid  >
                     <p:commandButton actionListener="#{institutionController.create}"  icon="pi pi-save"  value="#{bundle.Save}" update="display,:InstitutionListForm:datalist," style="background-color: indigo; color: white; margin-right: 10px; border-radius: 5px;"  oncomplete="handleSubmit(args,'InstitutionCreateDialog'); "/>

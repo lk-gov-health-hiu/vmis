@@ -53,7 +53,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListInstitutionTitle_parent}"/>
                             </f:facet>
-                            <h:outputText value="#{item.parent}"/>
+                            <h:outputText value="#{item.parent.name}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" style="background-color: blueviolet ; margin-right: 10px;" icon="pi pi-save"   value=" New Institution Register" actionListener="#{institutionController.prepareCreate}" update=":InstitutionCreateForm"  oncomplete="PF('InstitutionCreateDialog').show()"/>

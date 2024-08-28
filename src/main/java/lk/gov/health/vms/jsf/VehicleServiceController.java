@@ -18,6 +18,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
+import lk.gov.health.enums.ServiceType;
 
 @Named("vehicleServiceController")
 @SessionScoped
@@ -108,6 +109,11 @@ public class VehicleServiceController implements Serializable {
             }
         }
     }
+    
+     public ServiceType[]get() {
+        return ServiceType.values();
+    }
+
 
     public VehicleService getVehicleService(java.lang.Long id) {
         return getFacade().find(id);

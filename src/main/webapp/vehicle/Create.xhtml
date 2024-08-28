@@ -33,7 +33,9 @@
                                          style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px; width: 200px" >
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
-                                           itemValue="#{driverItem}"/>
+                                           itemValue="#{driverItem}"
+                                           itemLabel="#{driverItem.name}"
+                                           />
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateVehicleLabel_averageFuelPerL}" for="averageFuelPerL" />
                         <p:inputText id="averageFuelPerL" value="#{vehicleController.selected.averageFuelPerL}" title="#{bundle.CreateVehicleTitle_averageFuelPerL}" />

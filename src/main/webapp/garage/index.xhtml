@@ -7,7 +7,9 @@
 
     <body>
 
-       <ui:composition template="/template.xhtml">
+        <ui:composition template="./../template.xhtml">
+
+            
 
             <ui:define name="body">
                 <div class="container-fluid">
@@ -15,8 +17,8 @@
                     <div class="row" >
                         <div class="col-2" >
                             <h:form >
-                                <p:commandButton ajax="false" icon="pi pi-user-plus"  style="background-color: blueviolet ; margin-right: 10px;" value="Add New User" action="#{webUserController.navigateToAddNewUser()}" ></p:commandButton>
-                                <p:commandButton ajax="false" icon="pi pi-users" style="background-color:  indigo; margin-right: 10px; margin-top: 20px" value="List Users" action="#{webUserController.navigateToListUsers()}" ></p:commandButton>
+                                <p:commandButton ajax="false" icon="pi pi-user-plus"  style="background-color: blueviolet ; margin-right: 10px;" value="Add New Garage" action="/garage/create?faces-redirect=true" ></p:commandButton>
+                                <p:commandButton ajax="false" icon="pi pi-users" style="background-color:  indigo; margin-right: 10px; margin-top: 20px" value="List Garage" action="/garage/create?faces-redirect=true" ></p:commandButton>
 
                             </h:form>
 
@@ -29,11 +31,9 @@
                     </div>
 
                 </div>
-
             </ui:define>
 
         </ui:composition>
-
 
     </body>
 </html>

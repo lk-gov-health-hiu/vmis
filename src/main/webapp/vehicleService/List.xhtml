@@ -82,13 +82,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_vehicle}"/>
                             </f:facet>
-                            <h:outputText value="#{item.vehicle}"/>
+                            <h:outputText value="#{item.vehicle.numberPlateNum}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_driver}"/>
                             </f:facet>
-                            <h:outputText value="#{item.driver}"/>
+                            <h:outputText value="#{item.driver.name}"/>
                         </p:column>
                         <f:facet name="footer">
                             <p:commandButton id="createButton" icon="pi pi-save"  style="background-color: blueviolet ; margin-right: 10px;" value="New Vehicle Service Register"  actionListener="#{vehicleServiceController.prepareCreate}" update=":VehicleServiceCreateForm" oncomplete="PF('VehicleServiceCreateDialog').show()"/>

@@ -30,12 +30,7 @@
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
-                        <p:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDriverTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </p:column>
+                       
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_nic}"/>
@@ -58,7 +53,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_institution}"/>
                             </f:facet>
-                            <h:outputText value="#{item.institution}"/>
+                            <h:outputText value="#{item.institution.name}"/>
                         </p:column>
                         
                         <f:facet name="footer">
@@ -71,6 +66,7 @@
                     </p:dataTable>
                 </p:panel>
             </h:form>
+     
 
             <ui:include src="Create.xhtml"/>
             <ui:include src="Edit.xhtml"/>

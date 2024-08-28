@@ -25,6 +25,7 @@ import lk.gov.health.vms.entities.Driver;
 import lk.gov.health.vms.entities.Institution;
 import lk.gov.health.vms.entities.Vehicle;
 import org.jasypt.util.password.StrongPasswordEncryptor;
+import javax.faces.context.FacesContext;
 
 @Named("webUserController")
 @SessionScoped
@@ -200,8 +201,23 @@ public class WebUserController implements Serializable {
             JsfUtil.addErrorMessage("please enter password");
             return "";
         }
+//        if (authenticate(username, password)) {
+//            return "/home?faces-redirect=true";
+//        } else {
+//            JsfUtil.addErrorMessage("Invalid username or password");
+//            return "";
+//        }
         if (authenticate(username, password)) {
-            return "/home?faces-redirect=true";
+            FacesContext context = FacesContext.getCurrentInstance();
+            if (context.getExternalContext().getSession(false) == null) {
+                // Session timed out
+                return "/timeout?faces-redirect=true";
+            } else {
+                
+                
+                JsfUtil.addSuccessMessage("Logged Successfully");
+                return "/home?faces-redirect=true";
+            }
         } else {
             JsfUtil.addErrorMessage("Invalid username or password");
             return "";
@@ -209,13 +225,9 @@ public class WebUserController implements Serializable {
 
     }
 
-    
-
-    
-     
-    
+    // authenticate user 
     private boolean authenticate(String username, String password) {
-        loggedUser=null;
+        loggedUser = null;
         String jpql = "Select wu "
                 + " from WebUser wu "
                 + " where wu.retired=:ret"
@@ -313,8 +325,6 @@ public class WebUserController implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
-    
-    
 
     @FacesConverter(forClass = WebUser.class)
     public static class WebUserControllerConverter implements Converter {
