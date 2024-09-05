@@ -7,17 +7,24 @@
 
     <body>
 
-        <ui:composition template="/garage/index.xhtml">
+        <ui:composition template="/fuelstation/index.xhtml">
 
             <ui:define name="contents">
+              
                 <h:form style="width: 700px; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight; margin-left: 200px">
-                    <h5 style="color: indianred; margin-left: 60px;">Garage Register</h5>
+                    <h5 style="color: indianred; margin-left: 60px;">Fuel Station Register</h5>
 
                     <h:panelGrid columns="2" style="width: 600px;padding: 20px;  border-radius: 15px; background-color:white;">
                         <p:outputLabel for="name" value="Name:" />
                         <p:inputText id="name"
                                      value="#{garageController.selected.name}"
                                      class="form-control"/>
+                        <p:outputLabel for="dealnumber" value="Dealer number" />
+                        <p:inputText id="dealnumber"
+                                     value="#{garageController.selected.name}"
+                                     class="form-control"/>
+                        <p:outputLabel for="distric" value="Distric:" />
+                        <p:inputText id="distric"  class="form-control" value="#{garageController.selected.type}" />
 
                         <p:outputLabel for="address" value="Address:" />
                         <p:inputText id="address"
@@ -39,10 +46,9 @@
                                      class="form-control"
                                      value="#{garageController.selected.whatsappnum}" />
 
-                        <p:outputLabel for="type" value="Type:" />
-                        <p:inputText id="type"  class="form-control" value="#{garageController.selected.type}" />
+                       
                     </h:panelGrid>
-                    <p:commandButton value="Save Garage"
+                    <p:commandButton value="Save Fuel Station"
                                      icon="pi pi-save"
                                      ajax="false" 
                                      style="background-color: indigo ;margin-top: 20px"
