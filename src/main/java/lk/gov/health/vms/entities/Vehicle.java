@@ -39,9 +39,15 @@ public class Vehicle implements Serializable {
     private Institution Ownerinstitution;  //Owener institution
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date registeredDate;// Registerd date
-    private String registeredAt;// who is registered  vehicle wchich for Health Institution
-            
-
+    private String registeredAt;// who is registered  vehicle which for Health Institution
+    //------------------------------------------------------------------------------------newly added attributies
+   private float  enginecapacity;
+   private String specialnotes;
+   private String value;
+   private String color;
+   private Date yearofmaufacture;
+  private  String calssofvehicle;
+    
     
     public Long getId() {
         return id;
@@ -170,6 +176,54 @@ public class Vehicle implements Serializable {
 
     public void setRegisteredAt(String registeredAt) {
         this.registeredAt = registeredAt;
+    }
+    
+        public String getCalssofvehicle() {
+        return calssofvehicle;
+    }
+
+    public void setCalssofvehicle(String calssofvehicle) {
+        this.calssofvehicle = calssofvehicle;
+    }
+
+    public float getEnginecapacity() {
+        return enginecapacity;
+    }
+
+    public void setEnginecapacity(float enginecapacity) {
+        this.enginecapacity = enginecapacity;
+    }
+
+    public String getSpecialnotes() {
+        return specialnotes;
+    }
+
+    public void setSpecialnotes(String specialnotes) {
+        this.specialnotes = specialnotes;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Date getYearofmaufacture() {
+        return yearofmaufacture;
+    }
+
+    public void setYearofmaufacture(Date yearofmaufacture) {
+        this.yearofmaufacture = yearofmaufacture;
     }
     
 }

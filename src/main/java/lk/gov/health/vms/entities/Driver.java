@@ -27,6 +27,7 @@ public class Driver implements Serializable {
     private String address;
     @ManyToOne
     private Institution institution;
+    private Long contactnumber;
 
     public Long getId() {
         return id;
@@ -91,6 +92,14 @@ public class Driver implements Serializable {
 
     public void setInstitution(Institution institution) {
         this.institution = institution;
+    }
+
+    public Long getContactnumber() {
+        return contactnumber;
+    }
+
+    public void setContactnumber(Long contactnumber) {
+        this.contactnumber = contactnumber;
     }
 
 }
