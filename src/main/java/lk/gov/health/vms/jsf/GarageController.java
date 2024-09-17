@@ -22,28 +22,27 @@ import lk.gov.health.vms.jsf.util.JsfUtil;
  *
  * @author Theminda
  */
-@Named(value = "garageController")
+@Named
 @SessionScoped
 public class GarageController implements Serializable {
 
     @EJB
-    private lk.gov.health.vms.beans.GarageFacade ejbbeans;
+    private GarageFacade garageFacade;
     @PersistenceContext
     private EntityManager entityManager;
-    
-    private List<Garage> items1 = null;
-       
-    private Garage currentgarage;
-    
+
+    private List<Garage> items = null;
+
+    private Garage current;
+
     private Garage selected;
 
-  
-    public GarageFacade getEjbbeans() {
-        return ejbbeans;
+    public GarageFacade getGarageFacade() {
+        return garageFacade;
     }
 
-    public void setEjbbeans(GarageFacade ejbbeans) {
-        this.ejbbeans = ejbbeans;
+    public void setGarageFacade(GarageFacade garageFacade) {
+        this.garageFacade = garageFacade;
     }
 
     public EntityManager getEntityManager() {
@@ -54,20 +53,20 @@ public class GarageController implements Serializable {
         this.entityManager = entityManager;
     }
 
-    public List<Garage> getItems1() {
-        return items1;
+    public List<Garage> getItems() {
+        return items;
     }
 
-    public void setItems1(List<Garage> items1) {
-        this.items1 = items1;
+    public void setItems(List<Garage> items) {
+        this.items = items;
     }
 
-    public Garage getCurrentgarage() {
-        return currentgarage;
+    public Garage getCurrent() {
+        return current;
     }
 
-    public void setCurrentgarage(Garage currentgarage) {
-        this.currentgarage = currentgarage;
+    public void setCurrent(Garage current) {
+        this.current = current;
     }
 
     public Garage getSelected() {
@@ -77,25 +76,33 @@ public class GarageController implements Serializable {
     public void setSelected(Garage selected) {
         this.selected = selected;
     }
-    
-      public String NavigateToAdd() {
 
-        currentgarage = new Garage();
+    public String navigateToAdd() {
+        current = new Garage();
         return "/garage/create?faces-redirect=true";
     }
-   
-      //Register Garage------------------------------------------
     
-    
-     public void create(){
-         
-         if(currentgarage==null){
-              
-             currentgarage=new Garage();
-             ejbbeans.create(currentgarage);
-         }
-     }
-     
+    public String navigateToList() {
+        items = garageFacade.findAll();
+        return "/garage/list?faces-redirect=true";
+    }
+
+    //Register Garage------------------------------------------
+    public String save() {
+        if (current == null) {
+            JsfUtil.addErrorMessage("No Garage");
+            return null;
+        }
+        if (current.getId() == null) {
+            garageFacade.create(current);
+            items.add(current);
+            JsfUtil.addSuccessMessage("New Garage Saved");
+        } else {
+            garageFacade.edit(current);
+            JsfUtil.addSuccessMessage("Garage Details Updated.");
+        }
+        return navigateToList();
+    }
 
 }
 //    public void create() {
@@ -107,7 +114,7 @@ public class GarageController implements Serializable {
 //            garage1.setContact(selected.getContact());
 //            garage1.setWhatsappnum(selected.getWhatsappnum());
 //            garage1.setType(selected.getType());
-//            ejbbeans.create(garage1);
+//            garageFacade.create(garage1);
 //            JsfUtil.addSuccessMessage("Garage saved successfully");
 //
 //        } catch (Exception ex) {

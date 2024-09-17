@@ -16,37 +16,37 @@
                     <h:panelGrid columns="2" style="width: 600px;padding: 20px;  border-radius: 15px; background-color:white;">
                         <p:outputLabel for="name" value="Name:" />
                         <p:inputText id="name"
-                                     value="#{garageController.selected.name}"
+                                     value="#{garageController.current.name}"
                                      class="form-control"/>
 
                         <p:outputLabel for="address" value="Address:" />
                         <p:inputText id="address"
                                      class="form-control"
-                                     value="#{garageController.selected.address}" />
+                                     value="#{garageController.current.address}" />
 
                         <p:outputLabel for="contact" value="Contact:" />
                         <p:inputText id="contact"
                                      class="form-control"
-                                     value="#{garageController.selected.contact}" />
+                                     value="#{garageController.current.contact}" />
 
                         <p:outputLabel for="email" value="Email:" />
                         <p:inputText id="email"
                                      class="form-control"
-                                     value="#{garageController.selected.email}" />
+                                     value="#{garageController.current.email}" />
 
                         <p:outputLabel for="whatsappnum" value="WhatsApp Number:" />
                         <h:inputText id="whatsappnum"
                                      class="form-control"
-                                     value="#{garageController.selected.whatsappnum}" />
+                                     value="#{garageController.current.whatsappnum}" />
 
                         <p:outputLabel for="type" value="Type:" />
-                        <p:inputText id="type"  class="form-control" value="#{garageController.selected.type}" />
+                        <p:inputText id="type"  class="form-control" value="#{garageController.current.type}" />
                     </h:panelGrid>
                     <p:commandButton value="Save Garage"
                                      icon="pi pi-save"
                                      ajax="false" 
                                      style="background-color: indigo ;margin-top: 20px"
-                                     action="#{garageController.create()}" />
+                                     action="#{garageController.save}" />
 
                     <div class="row">
 
