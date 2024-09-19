@@ -22,13 +22,15 @@
                                  paginator="true"
                                  rowKey="#{item.id}"
                                  rows="10"
+                                 resizableColumns="true" multiViewState="true" resizeMode="expand" 
+
                                  rowsPerPageTemplate="10,20,30,40,50"
                                  >
-
+                        <f:facet name="header">
+                            <p:commandButton id="createButton" icon="pi pi-save"   value=" New Vehicle Register" actionListener="#{vehicleController.prepareCreate}" style="background-color: blueviolet ; margin-right: 10px;" update=":VehicleCreateForm" oncomplete="PF('VehicleCreateDialog').show()"/>
+                        </f:facet>
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
-
-                        
                         <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_make}"/>
@@ -103,12 +105,17 @@
                             </f:facet>
                             <h:outputText value="#{item.registeredAt}"/>
                         </p:column>
-                        <f:facet name="footer">
-                            <p:commandButton id="createButton" icon="pi pi-save"   value=" New Vehicle Register" actionListener="#{vehicleController.prepareCreate}" style="background-color: blueviolet ; margin-right: 10px;" update=":VehicleCreateForm" oncomplete="PF('VehicleCreateDialog').show()"/>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListVehicleTitle_registeredAt}"/>
+                            </f:facet>
                             <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()" disabled="#{empty vehicleController.selected}"/>
                             <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":VehicleEditForm" oncomplete="PF('VehicleEditDialog').show()" disabled="#{empty vehicleController.selected}"/>
                             <p:commandButton id="deleteButton" icon="pi pi-trash"  value="#{bundle.Delete}" style="background-color: #D20005" actionListener="#{vehicleController.destroy}" update="datalist" disabled="#{empty vehicleController.selected}"/>
-                        </f:facet>
+                        </p:column>
+
+
+
                     </p:dataTable>
                 </p:panel>
             </h:form>

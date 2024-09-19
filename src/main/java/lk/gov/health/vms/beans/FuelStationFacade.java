@@ -7,6 +7,7 @@ package lk.gov.health.vms.beans;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import lk.gov.health.vms.entities.FuelStation;
 
 /**
  *
@@ -25,5 +26,13 @@ public class FuelStationFacade extends AbstractFacade<FuelStationFacade>{
     public FuelStationFacade() {
         super(FuelStationFacade.class);
     }
-    
+
+//    public void create(FuelStation current) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//
+//    public void edit(FuelStation current) {
+//        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+//    }
+//    
 }

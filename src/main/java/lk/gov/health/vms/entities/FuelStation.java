@@ -22,12 +22,12 @@ public class FuelStation implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     String name;
-    int dealernumber;
-    String distric;
-    String Address;
-    int contact;   
-    int whatsapp;
-    String email;
+    private int dealernumber;
+    private String distric;
+    private String Address;
+    private Long contact;   
+    private Long whatsapp;
+    private String email;
 
     public Long getId() {
         return id;
@@ -69,19 +69,19 @@ public class FuelStation implements Serializable {
         this.Address = Address;
     }
 
-    public int getContact() {
+    public Long getContact() {
         return contact;
     }
 
-    public void setContact(int contact) {
+    public void setContact(Long contact) {
         this.contact = contact;
     }
 
-    public int getWhatsapp() {
+    public Long getWhatsapp() {
         return whatsapp;
     }
 
-    public void setWhatsapp(int whatsapp) {
+    public void setWhatsapp(Long whatsapp) {
         this.whatsapp = whatsapp;
     }
 

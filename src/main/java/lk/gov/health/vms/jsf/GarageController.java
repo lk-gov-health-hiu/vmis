@@ -105,20 +105,4 @@ public class GarageController implements Serializable {
     }
 
 }
-//    public void create() {
-//
-//        try {
-//            garage1.setName(selected.getName());
-//            garage1.setAddress(selected.getAddress());
-//            garage1.setEmail(selected.getEmail());
-//            garage1.setContact(selected.getContact());
-//            garage1.setWhatsappnum(selected.getWhatsappnum());
-//            garage1.setType(selected.getType());
-//            garageFacade.create(garage1);
-//            JsfUtil.addSuccessMessage("Garage saved successfully");
-//
-//        } catch (Exception ex) {
-//            JsfUtil.addErrorMessage("Error....!");
-//        }
-//
-//    }
+

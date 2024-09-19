@@ -17,34 +17,36 @@
                     <h:panelGrid columns="2" style="width: 600px;padding: 20px;  border-radius: 15px; background-color:white;">
                         <p:outputLabel for="name" value="Name:" />
                         <p:inputText id="name"
-                                     value="#{garageController.selected.name}"
+                                     value="#{fuelstationController.current.name}"
                                      class="form-control"/>
                         <p:outputLabel for="dealnumber" value="Dealer number" />
                         <p:inputText id="dealnumber"
-                                     value="#{garageController.selected.name}"
+                                     value="#{fuelstationController.current.dealernumber}"
                                      class="form-control"/>
                         <p:outputLabel for="distric" value="Distric:" />
-                        <p:inputText id="distric"  class="form-control" value="#{garageController.selected.type}" />
+                        <p:inputText id="distric" 
+                                     class="form-control"
+                                     value="#{fuelstationController.current.distric}" />
 
                         <p:outputLabel for="address" value="Address:" />
                         <p:inputText id="address"
                                      class="form-control"
-                                     value="#{garageController.selected.address}" />
+                                     value="#{fuelstationController.current.address}" />
 
                         <p:outputLabel for="contact" value="Contact:" />
                         <p:inputText id="contact"
                                      class="form-control"
-                                     value="#{garageController.selected.contact}" />
+                                     value="#{fuelstationController.current.contact}" />
 
                         <p:outputLabel for="email" value="Email:" />
                         <p:inputText id="email"
                                      class="form-control"
-                                     value="#{garageController.selected.email}" />
+                                     value="#{fuelstationController.current.email}" />
 
                         <p:outputLabel for="whatsappnum" value="WhatsApp Number:" />
                         <h:inputText id="whatsappnum"
                                      class="form-control"
-                                     value="#{garageController.selected.whatsappnum}" />
+                                     value="#{fuelstationController.current.whatsapp}" />
 
                        
                     </h:panelGrid>
@@ -52,7 +54,7 @@
                                      icon="pi pi-save"
                                      ajax="false" 
                                      style="background-color: indigo ;margin-top: 20px"
-                                     action="#{garageController.create()}" />
+                                     action="#{fuelstationController.save()}" />
 
                     <div class="row">
 
