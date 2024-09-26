@@ -31,67 +31,67 @@
                         </f:facet>
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
-                        <p:column>
+                        <p:column sortBy="#{item.make}" filterBy="#{item.make}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_make}"/>
                             </f:facet>
                             <h:outputText value="#{item.make}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.model}" filterBy="#{item.model}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_model}"/>
                             </f:facet>
                             <h:outputText value="#{item.model}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.numberPlateNum}" filterBy="#{item.numberPlateNum}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_numberPlateNum}"/>
                             </f:facet>
                             <h:outputText value="#{item.numberPlateNum}"/>
                         </p:column>
-                        <p:column>
+                        <p:column  sortBy="#{item.chassyNum}" filterBy="#{item.chassyNum}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_chassyNum}"/>
                             </f:facet>
                             <h:outputText value="#{item.chassyNum}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.engineNum}" filterBy="#{item.engineNum}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_engineNum}"/>
                             </f:facet>
                             <h:outputText value="#{item.engineNum}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.estimateFuelConsumtion}" filterBy="#{item.estimateFuelConsumtion}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_estimateFuelConsumtion}"/>
                             </f:facet>
                             <h:outputText value="#{item.estimateFuelConsumtion}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.mainpurpose}" filterBy="#{item.mainpurpose}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_mainpurpose}"/>
                             </f:facet>
                             <h:outputText value="#{item.mainpurpose}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.driver.name}" filterBy="#{item.driver.name}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_driver}"/>
                             </f:facet>
-                            <h:outputText value="#{item.driver}"/>
+                            <h:outputText value="#{item.driver.name}"/>
                         </p:column>
-                        <p:column>
+                        <p:column  sortBy="#{item.averageFuelPerL}" filterBy="#{item.averageFuelPerL}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_averageFuelPerL}"/>
                             </f:facet>
                             <h:outputText value="#{item.averageFuelPerL}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.ownerinstitution}" filterBy="#{item.ownerinstitution}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_ownerinstitution}"/>
                             </f:facet>
                             <h:outputText value="#{item.ownerinstitution}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.registeredDate}" filterBy="#{item.registeredDate}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_registeredDate}"/>
                             </f:facet>
@@ -99,7 +99,7 @@
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.registeredAt}" filterBy="#{item.registeredAt}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleTitle_registeredAt}"/>
                             </f:facet>
@@ -107,7 +107,7 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListVehicleTitle_registeredAt}"/>
+                                <h:outputText value="Actions"/>
                             </f:facet>
                             <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()" disabled="#{empty vehicleController.selected}"/>
                             <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":VehicleEditForm" oncomplete="PF('VehicleEditDialog').show()" disabled="#{empty vehicleController.selected}"/>

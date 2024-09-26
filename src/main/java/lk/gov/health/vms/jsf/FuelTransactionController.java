@@ -19,6 +19,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
+
 @Named("fuelTransactionController")
 @SessionScoped
 public class FuelTransactionController implements Serializable {

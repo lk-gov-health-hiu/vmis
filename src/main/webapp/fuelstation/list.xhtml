@@ -1,14 +1,57 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <body>
 
         <ui:composition template="/fuelstation/index.xhtml">
 
             <ui:define name="contents">
-                Save
+                 <h5 style="color: indigo ; font-family: fantasy">Fuel Station List</h5>
+
+                <h:form>
+                    <p:dataTable value="#{fuelstationController.items}" var="g" 
+                                 paginator="true"
+                                 rows="10"
+                                 style="width: 1100px"
+                                 resizableColumns="true" multiViewState="true" resizeMode="expand" 
+
+                                 >
+                        <p:column headerText="Fuel Station Name" sortBy="#{g.name}" filterBy="#{g.name}" filterMatchMode="contains">
+                            <h:outputText value="#{g.name}" ></h:outputText>
+                        </p:column>
+                        <p:column headerText="Dealer Number" sortBy="#{g.name}" filterBy="#{g.name}" filterMatchMode="contains">
+                            <h:outputText value="#{g.dealernumber}" ></h:outputText>
+                        </p:column>
+                        <p:column headerText="Address" sortBy="#{g.address}" filterBy="#{g.name}">
+                            <h:outputText value="#{g.address}" ></h:outputText>
+                        </p:column>
+                        <p:column headerText="Contact" sortBy="#{g.contact}" filterBy="#{g.contact}" filterMatchMode="contains">
+                            <h:outputText value="#{g.contact}" ></h:outputText>
+                        </p:column>
+                        <p:column headerText="Email" sortBy="#{g.email}" filterBy="#{g.email}">
+                            <h:outputText value="#{g.email}" ></h:outputText>
+                        </p:column>
+                        <p:column headerText="Whatsapp Num" sortBy="#{g.whatsappnum}" filterBy="#{g.whatsappnum}" filterMatchMode="contains">
+                            <h:outputText value="#{g.whatsappnum}" ></h:outputText>
+                        </p:column>
+                      
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="Actions"/>
+                            </f:facet>
+                            <p:commandButton id="viewButton" style="background-color: goldenrod; margin-right: 10px;"  icon="pi pi-eye" value="#{bundle.View}" />
+                            <p:commandButton id="editButton" style="background-color: green ;margin-right: 10px;"  icon="pi pi-check-circle" value="#{bundle.Edit}"/>
+                            <p:commandButton id="deleteButton" style="background-color: #D20005" icon="pi pi-trash"  value="#{bundle.Delete}"/>
+
+                        </p:column>
+                    </p:dataTable>
+
+                </h:form>
             </ui:define>
 
         </ui:composition>

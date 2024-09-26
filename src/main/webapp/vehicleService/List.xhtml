@@ -33,7 +33,7 @@
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
 
                        
-                        <p:column>
+                        <p:column sortBy="#{item.serviceDate} " filterBy="#{item.serviceDate}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_serviceDate}"/>
                             </f:facet>
@@ -41,49 +41,49 @@
                                 <f:convertDateTime pattern="MM/dd/yyyy" />
                             </h:outputText>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.serviceDetails} " filterBy="#{item.serviceDetails}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_serviceDetails}"/>
                             </f:facet>
                             <h:outputText value="#{item.serviceDetails}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.serviceType} " filterBy="#{item.serviceType}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_serviceType}"/>
                             </f:facet>
                             <h:outputText value="#{item.serviceType}"/>
                         </p:column>
-                        <p:column>
+                        <p:column  sortBy="#{item.odoMeterCount} " filterBy="#{item.odoMeterCount}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_odoMeterCount}"/>
                             </f:facet>
                             <h:outputText value="#{item.odoMeterCount}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.status} " filterBy="#{item.status}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_status}"/>
                             </f:facet>
                             <h:outputText value="#{item.status}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.otherDetails} " filterBy="#{item.otherDetails}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_otherDetails}"/>
                             </f:facet>
                             <h:outputText value="#{item.otherDetails}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.amount} " filterBy="#{item.amount}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_amount}"/>
                             </f:facet>
                             <h:outputText value="#{item.amount}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.vehicle.numberPlateNum} " filterBy="#{item.vehicle.numberPlateNum}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_vehicle}"/>
                             </f:facet>
                             <h:outputText value="#{item.vehicle.numberPlateNum}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.driver.name} " filterBy="#{item.driver.name}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListVehicleServiceTitle_driver}"/>
                             </f:facet>

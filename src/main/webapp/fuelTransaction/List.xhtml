@@ -118,7 +118,7 @@
                         </p:column>
                         <p:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListFuelTransactionTitle_issueReferenceNumber}"/>
+                                <h:outputText value="Action"/>
                             </f:facet> 
                             <p:commandButton id="viewButton" style="background-color: goldenrod; margin-right: 10px;"  icon="pi pi-eye" value="#{bundle.View}" update=":FuelTransactionViewForm" oncomplete="PF('FuelTransactionViewDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>
                             <p:commandButton id="editButton" style="background-color: green ;margin-right: 10px;"  icon="pi pi-check-circle" value="#{bundle.Edit}" update=":FuelTransactionEditForm" oncomplete="PF('FuelTransactionEditDialog').show()" disabled="#{empty fuelTransactionController.selected}"/>

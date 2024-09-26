@@ -26,6 +26,7 @@
                                           style="border: 1px solid #4A90E2; border-radius: 6px; padding: 8px;">
                             <f:selectItems value="#{vehicleController.itemsAvailableSelectOne}"
                                            var="vehicleItem"
+                                       
                                            itemValue="#{vehicleItem}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_fromInstitution}" for="fromInstitution" />
@@ -40,7 +41,8 @@
                                           style="border: 1px solid #4A90E2; border-radius: 6px; padding: 10px;">
                             <f:selectItems value="#{driverController.itemsAvailableSelectOne}"
                                            var="driverItem"
-                                           itemValue="#{driverItem}"/>
+                                       
+                                           itemValue="#{driverItem.name}"/>
                         </p:selectOneMenu>
                         <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_comments}" for="comments" />
                         <p:inputTextarea rows="4" class="form-control" cols="30" id="comments" value="#{fuelTransactionController.selected.comments}" title="#{bundle.CreateFuelTransactionTitle_comments}" />

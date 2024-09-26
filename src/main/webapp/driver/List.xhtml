@@ -37,29 +37,35 @@
                         <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
                         <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
                      
-                        <p:column>
+                        <p:column sortBy="#{item.nic}" filterBy="#{item.nic}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_nic}"/>
                             </f:facet>
                             <h:outputText value="#{item.nic}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.name}" filterBy="#{item.name}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_name}"/>
                             </f:facet>
                             <h:outputText value="#{item.name}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.address}" filterBy="#{item.address}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_address}"/>
                             </f:facet>
                             <h:outputText value="#{item.address}"/>
                         </p:column>
-                        <p:column>
+                        <p:column sortBy="#{item.institution.name}" filterBy="#{item.institution.name}">
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListDriverTitle_institution}"/>
                             </f:facet>
                             <h:outputText value="#{item.institution.name}"/>
+                        </p:column>
+                        <p:column sortBy="#{item.contactnumber}" filterBy="#{item.contactnumber}">
+                            <f:facet name="header">
+                                <h:outputText value="ContactNumber"/>
+                            </f:facet>
+                            <h:outputText value="#{item.contactnumber}"/>
                         </p:column>
                         <p:column>
                             <f:facet name="header">

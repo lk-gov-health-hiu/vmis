@@ -34,6 +34,8 @@
                                            itemValue="#{parentItem}"
                                            itemLabel="#{parentItem.name}"/>
                         </p:selectOneMenu>
+                        <p:outputLabel value="Institution Contact Number" for="contact" />
+                        <p:inputText id="contact" value="#{institutionController.selected.institutioncontactnumber}"  class="form-control" />
                     </p:panelGrid  >
                     <p:commandButton actionListener="#{institutionController.create}"  icon="pi pi-save"  value="#{bundle.Save}" update="display,:InstitutionListForm:datalist," style="background-color: indigo; color: white; margin-right: 10px; border-radius: 5px;"  oncomplete="handleSubmit(args,'InstitutionCreateDialog'); "/>
                     <p:commandButton value="#{bundle.Cancel}" icon="pi pi-times" style="background-color: blueviolet; color: white; border-radius: 5px;" onclick="InstitutionCreateDialog.hide()"/>
