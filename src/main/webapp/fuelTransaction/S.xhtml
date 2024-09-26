@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../template.xhtml">
+
+
+
+            <ui:define name="body">
+
+                <h:form style="max-width: 600px; overflow-y:auto; padding: 20px; border: 2px solid #4A90E2; border-radius: 15px; background-color:buttonhighlight; margin-left: 200px">
+                    <h5 style="color: indianred; margin-left: 60px;">Make Special Fuel  Request</h5>
+
+                    <h:panelGrid columns="2" style="width: 500px;padding: 20px;  border-radius: 15px; background-color:white;">
+
+                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestedDate}" for="requestedDate" />
+                        <p:calendar id="requestedDate" class="form-control" pattern="MM/dd/yyyy" value="#{fuelTransactionController.selected.requestedDate}" title="#{bundle.EditFuelTransactionTitle_requestedDate}"  showOn="button"/>
+                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_driver}" for="driver" />
+                        <p:inputText id="driver"
+                                     class="form-control"
+                                     value="#{fuelTransactionController.selected.driver}" />
+                        <p:outputLabel value="Vehicle" for="vehicle1"/>
+                        <p:inputText id="vehicle1" class="form-control"
+                                     value="#{fuelTransactionController.selected.vehicle}"/>
+                        <p:outputLabel value="from Institution" for="fromInstitution" />
+                        <p:inputText id="fromInstitution" class="form-control" value="#{fuelTransactionController.selected.fromInstitution}"/> 
+
+
+                        <p:outputLabel value="Request RefNum" for="requestReferenceNumber" />
+                        <p:inputText id="requestReferenceNumber" class="form-control" value="#{fuelTransactionController.selected.requestReferenceNumber}" title="#{bundle.CreateFuelTransactionTitle_requestReferenceNumber}" />
+                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_odoMeterReading}" for="odoMeterReading" />
+                        <p:inputText id="odoMeterReading" class="form-control" value="#{fuelTransactionController.selected.odoMeterReading}" title="#{bundle.CreateFuelTransactionTitle_odoMeterReading}" />
+                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_requestQuantity}" for="requestQuantity" />
+                        <p:inputText id="requestQuantity" class="form-control" value="#{fuelTransactionController.selected.requestQuantity}"  />
+
+                        <p:outputLabel value="#{bundle.CreateFuelTransactionLabel_comments}" for="comments" />
+                        <p:inputTextarea rows="4" class="form-control" cols="30" id="comments" value="#{fuelTransactionController.selected.comments}" title="#{bundle.CreateFuelTransactionTitle_comments}" />
+                        <p:outputLabel value="Fuel Station" for="depot"/>
+                        <p:inputText id="depot" class="form-control" value="#{fuelTransactionController.selected.fuelstation}"/>
+                    </h:panelGrid>
+                    <p:commandButton value="Submit"
+                                     icon="pi pi-save"
+                                     ajax="false" 
+                                     style="background-color: indigo ;margin-top: 20px"
+                                     />
+
+                    <div class="row">
+
+                        <p:messages ></p:messages>
+
+                    </div>
+                </h:form>
+
+            </ui:define>
+
+
+
+        </ui:composition>
+
+    </body>
+</html>

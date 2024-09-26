@@ -44,6 +44,9 @@ public class FuelTransaction implements Serializable {
     private String comments;
      private String requestReferenceNumber;// bookrefernce number
     private String issueReferenceNumber;//Bill number
+    
+    @ManyToOne
+    private FuelStation fuelstation;
    
     public Long getId() {
         return id;
@@ -173,6 +176,14 @@ public class FuelTransaction implements Serializable {
 
     public void setIssueReferenceNumber(String issueReferenceNumber) {
         this.issueReferenceNumber = issueReferenceNumber;
+    }
+
+    public FuelStation getFuelstation() {
+        return fuelstation;
+    }
+
+    public void setFuelstation(FuelStation fuelstation) {
+        this.fuelstation = fuelstation;
     }
     
 }
