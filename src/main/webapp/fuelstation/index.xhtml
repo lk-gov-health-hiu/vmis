@@ -17,8 +17,8 @@
                     <div class="row" >
                         <div class="col-2" >
                             <h:form >
-                                <p:commandButton ajax="false" icon="pi pi-plus-circle"  style="background-color: blueviolet ; margin-right: 10px;" value="Add Fuel Station" action="/fuelstation/create?faces-redirect=true" ></p:commandButton>
-                                <p:commandButton ajax="false" icon="pi pi-directions-alt" style="background-color:  indigo; margin-right: 10px; margin-top: 20px" value="List Fuel Station" action="/fuelstation/list?faces-redirect=true" ></p:commandButton>
+                                <p:commandButton ajax="false" icon="pi pi-plus-circle"  style="background-color: blueviolet ; margin-right: 10px;" value="Add Fuel Station" action="#{fuelstationController.navigateToAdd1()}" ></p:commandButton>
+                                <p:commandButton ajax="false" icon="pi pi-directions-alt" style="background-color:  indigo; margin-right: 10px; margin-top: 20px" value="List Fuel Station" action="#{fuelstationController.navigatolist1()}" ></p:commandButton>
 
                             </h:form>
 

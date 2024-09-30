@@ -7,6 +7,7 @@ package lk.gov.health.vms.jsf;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.persistence.EntityManager;
@@ -45,6 +46,7 @@ public class FuelstationController implements Serializable {
     public void setFuelStationFacade(FuelStationFacade fuelStationFacade) {
         this.fuelStationFacade = fuelStationFacade;
     }
+    
 
     public EntityManager getEntityManager() {
         return entityManager;
@@ -55,6 +57,9 @@ public class FuelstationController implements Serializable {
     }
 
     public List<FuelStation> getItems() {
+        if (items == null) {
+            items = new ArrayList<>();
+        }
         return items;
     }
 
@@ -63,7 +68,7 @@ public class FuelstationController implements Serializable {
     }
 
     public FuelStation getCurrent() {
-       
+
         return current;
     }
 
@@ -79,16 +84,6 @@ public class FuelstationController implements Serializable {
         this.selected = selected;
     }
 
-    public String navigateToAdd() {
-        current = new FuelStation();
-        return "/fuelstation/create?faces-redirect=true";
-    }
-
-//    public String navigateToList() {
-//        items = FuelStation.findAll();
-//        return "/fuelstation/list?faces-redirect=true";
-//    }
-
     public String save() {
 
         if (current == null) {
@@ -96,17 +91,24 @@ public class FuelstationController implements Serializable {
             return null;
         }
         if (current.getId() == null) {
-         //    fuelStationFacade
-            
-            if (items != null) {
-                items.add(current);
-            }
+            fuelStationFacade.create(current);
+            getItems().add(current);
             JsfUtil.addSuccessMessage("Fuel station saved");
         } else {
-            // fuelStationFacade.edit(current);
+            fuelStationFacade.edit(current);
             JsfUtil.addSuccessMessage("Fuel station updated");
         }
+        return navigatolist1();
+    }
+
+    public String navigateToAdd1() {
+        current = new FuelStation();
+        return "/fuelstation/create?faces-redirect=true";
+    }
+
+    public String navigatolist1() {
+
+        items = fuelStationFacade.findAll();
         return "/fuelstation/list?faces-redirect=true";
     }
-    
 }

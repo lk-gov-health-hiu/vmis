@@ -14,7 +14,7 @@ import lk.gov.health.vms.entities.FuelStation;
  * @author Lenovo
  */
 @Stateless
-public class FuelStationFacade extends AbstractFacade<FuelStationFacade>{
+public class FuelStationFacade extends AbstractFacade<FuelStation>{
     
     @PersistenceContext(unitName = "em")
     private EntityManager em;
@@ -24,7 +24,7 @@ public class FuelStationFacade extends AbstractFacade<FuelStationFacade>{
         return em;
     }
     public FuelStationFacade() {
-        super(FuelStationFacade.class);
+        super(FuelStation.class);
     }
 
 //    public void create(FuelStation current) {
