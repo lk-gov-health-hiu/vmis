@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                 <div class="container-fluid" style="margin-left: 1pt; margin-top: 30px ;border: 20pt">
+                    
+                    <h:form style="background-color: pink  ; margin-right: 780pt ;height: 60px" >
+                        <i class="pi pi-home" style="font-size: 2rem"></i>
+                        <h:commandButton action="/institution/List?faces-redirect=true"  value="Manage Institutions " styleClass="btn btn" />
+                    </h:form>
+                    
+                    <h:form style="background-color: blanchedalmond ; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-car" style="font-size: 2rem"></i>
+                        <h:commandButton action="/vehicle/List?faces-redirect=true" value=" Manage Vehicles" styleClass="btn btn" />
+                    </h:form>
+
+                    
+                    <h:form style="background-color:  pink ; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-users" style="font-size: 2rem"></i>
+                        <h:commandButton action="/driver/List?faces-redirect=true" value="Manage Drivers  " styleClass="btn btn" />
+                    </h:form >
+                    
+                    <h:form style="background-color: blanchedalmond; margin-right: 780pt;height: 60px">
+                         <i class="pi pi-prime" style="font-size: 2rem"></i>
+                        <h:commandButton action="/fuelTransaction/List?faces-redirect=true" value="Manage Fuel Transactions" styleClass="btn btn" />
+                    </h:form>
+                   
+                    <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-server" style="font-size: 2rem"></i>
+                        <h:commandButton action="/vehicleService/List?faces-redirect=true" value="Manage Vehicle Rapairs" styleClass="btn btn" />
+                    </h:form>
+                  
+                    <h:form style="background-color:  blanchedalmond; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-book" style="font-size: 2rem"></i>
+                        <h:commandButton action="report?faces-redirect=true" value="Manage System Reports" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color:  pink; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-building" style="font-size: 2rem"></i>
+                        <h:commandButton action="garage/index?faces-redirect=true" value="Manage Garage" styleClass="btn btn" />
+                    </h:form>
+                    <h:form style="background-color:  blanchedalmond; margin-right: 780pt;height: 60px">
+                        <i class="pi pi-directions-alt" style="font-size: 2rem"></i>
+                        <h:commandButton action="fuelstation/index?faces-redirect=true" value="Manage Fuel Station" styleClass="btn btn" />
+                    </h:form>
+                </div>   
+
+            
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

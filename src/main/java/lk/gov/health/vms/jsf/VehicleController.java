@@ -64,6 +64,8 @@ public class VehicleController implements Serializable {
 
     public void update() {
         persist(PersistAction.UPDATE, ResourceBundle.getBundle("/Bundle").getString("VehicleUpdated"));
+                JsfUtil.addSuccessMessage(" changed");
+
     }
 
     public void destroy() {

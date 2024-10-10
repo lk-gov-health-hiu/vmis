@@ -109,9 +109,9 @@
                             <f:facet name="header">
                                 <h:outputText value="Actions"/>
                             </f:facet>
-                            <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()" disabled="#{empty vehicleController.selected}"/>
-                            <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":VehicleEditForm" oncomplete="PF('VehicleEditDialog').show()" disabled="#{empty vehicleController.selected}"/>
-                            <p:commandButton id="deleteButton" icon="pi pi-trash"  value="#{bundle.Delete}" style="background-color: #D20005" actionListener="#{vehicleController.destroy}" update="datalist" disabled="#{empty vehicleController.selected}"/>
+                            <p:commandButton id="viewButton"   icon="pi pi-eye" value="#{bundle.View}" style="background-color: goldenrod; margin-right: 10px;" update=":VehicleViewForm" oncomplete="PF('VehicleViewDialog').show()"/>
+                            <p:commandButton id="editButton"   icon="pi pi-check-circle" value="#{bundle.Edit}" style="background-color: green ;margin-right: 10px;" update=":VehicleEditForm" oncomplete="PF('VehicleCreateDialog').show()" />
+                            <p:commandButton id="deleteButton" icon="pi pi-trash"  value="#{bundle.Delete}" style="background-color: #D20005" actionListener="#{vehicleController.destroy}" update="datalist"/>
                         </p:column>
 
 
